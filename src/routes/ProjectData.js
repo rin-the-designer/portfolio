@@ -1,27 +1,32 @@
+import pickAndPlayThumb from '$lib/images/pick-and-play/thumbnail.png';
+import careerDiveThumb from '$lib/images/career-dive/thumbnail.png';
+import daconThumb from '$lib/images/dacon/thumbnail.png';
+import hwanghakCasualThumb from '$lib/images/hwanghak-casual/thumbnail.png';
+
 export const projects = [
 	{
 		title: 'Pick and Play',
 		slug: 'pick-and-play',
-		thumbnail: 'src/assets/img/pick-and-play/thumbnail.png'
+		thumbnail: pickAndPlayThumb
 	},
 	{
 		title: 'Career Dive',
 		slug: 'career-dive',
-		thumbnail: 'src/assets/img/career-dive/thumbnail.png'
+		thumbnail: careerDiveThumb
 	},
 	{
 		title: 'Dacon',
 		slug: 'dacon',
-		thumbnail: 'src/assets/img/dacon/thumbnail.png'
+		thumbnail: daconThumb
 	},
 	{
 		title: 'Hwanghak Casual',
 		slug: 'hwanghak-casual',
-		thumbnail: 'src/assets/img/hwanghak-casual/thumbnail.png'
+		thumbnail: hwanghakCasualThumb
 	},
 	{
 		title: 'Hwanghak Casual',
 		slug: 'hwanghak-casual',
-		thumbnail: 'src/assets/img/hwanghak-casual/thumbnail.png'
+		thumbnail: hwanghakCasualThumb
 	}
 ];

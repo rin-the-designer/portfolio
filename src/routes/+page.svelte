@@ -9,7 +9,7 @@
 <ul>
 	{#each data.summaries as { title, slug, thumbnail }}
 		<li>
-			<a href={thumbnail}>{title}, {slug}, {thumbnail}</a>
+			<div>{title}, {slug}, {thumbnail}</div>
 		</li>
 	{/each}
 </ul>
