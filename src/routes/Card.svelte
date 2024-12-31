@@ -41,7 +41,7 @@
 <div class="card-container">
 	{#each projects as project}
 		<div class="card">
-			<img src="/src/img/{project.folder}/thumbnail.png" alt="{project.title} Thumbnail" />
+			<img src="/src/assets/img/{project.folder}/thumbnail.png" alt="{project.title} Thumbnail" />
 			<div class="card-text">
 				<h1>{project.title}</h1>
 			</div>
