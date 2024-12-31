@@ -1,47 +1,23 @@
-<script>
-	const projects = [
-		{
-			title: 'Pick and Play',
-			folder: 'pick-and-play'
-		},
-		{
-			title: 'Career Dive',
-			folder: 'career-dive'
-		},
-		{
-			title: 'Dacon',
-			folder: 'dacon'
-		},
-		{
-			title: 'Hwanghak Casual',
-			folder: 'hwanghak-casual'
-		},
-		{
-			title: 'Hwanghak Casual',
-			folder: 'hwanghak-casual'
-		}
-	];
-
-	// Calculate total grid spaces based on viewport width
-	let totalSpaces = 2; // Default to mobile layout
-
-	function updateTotalSpaces() {
-		const width = window.innerWidth;
-		if (width >= 1024) return 4; // Desktop
-		if (width >= 768) return 3; // Tablet
-		return 2; // Mobile
+<script lang="ts">
+	interface Project {
+		title: string;
+		slug: string;
+		thumbnail: string;
 	}
 
-	// Set initial value
-	totalSpaces = updateTotalSpaces();
+	export let projects: Project[];
+	let width: number;
+	let totalSpaces: number = 2;
+
+	$: totalSpaces = width >= 1024 ? 4 : width >= 768 ? 3 : 2;
 </script>
 
-<svelte:window on:resize={() => (totalSpaces = updateTotalSpaces())} />
+<svelte:window bind:innerWidth={width} />
 
 <div class="card-container">
 	{#each projects as project}
 		<div class="card">
-			<img src="/src/assets/img/{project.folder}/thumbnail.png" alt="{project.title} Thumbnail" />
+			<img src={project.thumbnail} alt="{project.title} Thumbnail" />
 			<div class="card-text">
 				<h1>{project.title}</h1>
 			</div>
@@ -67,11 +43,6 @@
 		gap: 2px;
 		background-color: var(--black);
 		padding: 2px 0;
-	}
-
-	::selection {
-		background-color: var(--main-color);
-		color: white;
 	}
 
 	.card {

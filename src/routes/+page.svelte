@@ -1,15 +1,17 @@
-<script>
-	import Card from './Card.svelte';
+<script lang="ts">
+	import Card from '../components/Card.svelte';
+	let { data } = $props();
 </script>
 
 <h1>Hello World</h1>
 <p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
 
-<Card />
+<ul>
+	{#each data.summaries as { title, slug, thumbnail }}
+		<li>
+			<a href={thumbnail}>{title}, {slug}, {thumbnail}</a>
+		</li>
+	{/each}
+</ul>
 
-<style>
-	::selection {
-		background-color: var(--main-color);
-		color: white;
-	}
-</style>
+<Card projects={data.summaries} />
