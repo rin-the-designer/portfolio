@@ -1,7 +1,7 @@
-import pickAndPlayThumb from '$lib/images/pick-and-play/thumbnail.png';
-import careerDiveThumb from '$lib/images/career-dive/thumbnail.png';
-import daconThumb from '$lib/images/dacon/thumbnail.png';
-import hwanghakCasualThumb from '$lib/images/hwanghak-casual/thumbnail.png';
+import pickAndPlayThumb from '$lib/img/pick-and-play/thumbnail.png';
+import careerDiveThumb from '$lib/img/career-dive/thumbnail.png';
+import daconThumb from '$lib/img/dacon/thumbnail.png';
+import hwanghakCasualThumb from '$lib/img/hwanghak-casual/thumbnail.png';
 
 export const projects = [
 	{
