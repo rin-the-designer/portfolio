@@ -17,6 +17,14 @@
 	src: url('./assets/fonts/InterVariable-Italic.woff2') format('woff2');
 }
 
+@font-face {
+	font-family: 'JetBrains Mono';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url('./assets/fonts/JetBrainsMono-Regular.woff2') format('woff2');
+}
+
 :root {
 	--main-color: #0085ff;
 	--black: #181818;

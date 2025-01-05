@@ -5,7 +5,9 @@ export function load() {
 		summaries: projects.map((project) => ({
 			title: project.title,
 			slug: project.slug,
-			thumbnail: project.thumbnail
+			thumbnail: project.thumbnail,
+			excerpt: project.excerpt,
+			tags: project.tags
 		}))
 	};
 }

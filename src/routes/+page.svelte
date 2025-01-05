@@ -3,15 +3,11 @@
 	let { data } = $props();
 </script>
 
-<h1>Hello World</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
-
-<ul>
-	{#each data.summaries as { title, slug, thumbnail }}
-		<li>
-			<div>{title}, {slug}, {thumbnail}</div>
-		</li>
-	{/each}
-</ul>
-
+<iframe
+	title="Interactive Rin"
+	src="https://cc.rinchong.kim/archive-game/index.html"
+	width="100%"
+	height="360px"
+	scrolling="no"
+></iframe>
 <Card projects={data.summaries} />

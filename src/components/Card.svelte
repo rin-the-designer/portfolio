@@ -3,6 +3,8 @@
 		title: string;
 		slug: string;
 		thumbnail: string;
+		excerpt: string;
+		tags: string[];
 	}
 
 	export let projects: Project[];
@@ -20,6 +22,12 @@
 			<img src={project.thumbnail} alt="{project.title} Thumbnail" />
 			<div class="card-text">
 				<h1>{project.title}</h1>
+				<p>{project.excerpt}</p>
+				<div class="tags">
+					{#each project.tags as tag}
+						<span class="tag">{tag}</span>
+					{/each}
+				</div>
 			</div>
 		</div>
 	{/each}
@@ -64,11 +72,39 @@
 		flex-direction: column;
 		gap: 0.5rem;
 		padding: 0.5rem;
+		height: 100%;
 	}
 
 	.card h1 {
 		font-weight: 600;
 		font-size: 1rem;
+	}
+
+	.card p {
+		font-weight: 400;
+		font-size: 0.875rem;
+	}
+
+	.tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+
+	.tags .tag {
+		font-weight: 450;
+		font-size: 0.75rem;
+		padding: 0.25rem 0.5rem;
+		border-radius: 0.25rem;
+		background-color: #0000000d;
+		color: var(--black);
+		transition: all 0.3s ease-in-out;
+	}
+
+	.tags .tag:hover {
+		background-color: var(--main-color);
+		color: white;
+		cursor: pointer;
 	}
 
 	/* Tablet: 3 columns */
