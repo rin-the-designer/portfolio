@@ -1,4 +1,4 @@
-import { projects } from './ProjectData.js';
+import { projects } from '$lib/ProjectData.js';
 
 export function load() {
 	return {
