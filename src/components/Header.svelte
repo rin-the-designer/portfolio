@@ -31,7 +31,7 @@
 		padding: 0.5rem 0.5rem 1rem 0.5rem;
 		line-height: 1.25rem;
 		font-weight: 700;
-		transition: color 0.3s ease-in-out;
+		transition: color 0.2s ease-in-out;
 	}
 
 	.header .logo:hover {
@@ -58,7 +58,7 @@
 		height: 100%;
 		line-height: 1.25rem;
 		padding: 1rem 1rem;
-		transition: background-color 0.3s ease-in-out;
+		transition: background-color 0.2s ease-in-out;
 		border-right: 2px solid var(--black);
 	}
 
@@ -68,5 +68,6 @@
 
 	.header .menu a:hover {
 		background-color: var(--main-color);
+		color: white;
 	}
 </style>

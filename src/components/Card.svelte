@@ -9,9 +9,9 @@
 
 	export let projects: Project[];
 	let width: number;
-	let totalSpaces: number = 2;
+	let totalSpaces: number = 1;
 
-	$: totalSpaces = width >= 1024 ? 4 : width >= 768 ? 3 : 2;
+	$: totalSpaces = width >= 1024 ? 4 : width >= 768 ? 3 : width >= 480 ? 2 : 1;
 </script>
 
 <svelte:window bind:innerWidth={width} />
@@ -47,7 +47,7 @@
 <style>
 	:global(.card-container) {
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(1, 1fr);
 		gap: 2px;
 		background-color: var(--black);
 		padding: 2px 0;
@@ -71,7 +71,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: 0.5rem;
-		padding: 0.5rem;
+		padding: 1rem 0.5rem;
 		height: 100%;
 	}
 
@@ -92,19 +92,24 @@
 	}
 
 	.tags .tag {
-		font-weight: 450;
+		font-weight: 700;
+		text-decoration: underline;
 		font-size: 0.75rem;
-		padding: 0.25rem 0.5rem;
-		border-radius: 0.25rem;
-		background-color: #0000000d;
 		color: var(--black);
-		transition: all 0.3s ease-in-out;
+		transition: all 0.2s ease-in-out;
 	}
 
 	.tags .tag:hover {
 		background-color: var(--main-color);
 		color: white;
 		cursor: pointer;
+	}
+
+	/* Large Mobile: 2 columns */
+	@media (min-width: 480px) {
+		:global(.card-container) {
+			grid-template-columns: repeat(2, 1fr);
+		}
 	}
 
 	/* Tablet: 3 columns */
