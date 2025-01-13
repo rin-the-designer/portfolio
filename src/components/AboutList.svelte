@@ -62,7 +62,7 @@
 						design more intuitive, inclusive, and interactive.
 					</h3>
 					<div>
-						<h3><a href="src/assets/files/RinKim-Resume.pdf">Résumé PDF</a></h3>
+						<h3><a href="$lib/files/RinKim-Resume.pdf">Résumé PDF</a></h3>
 						<h3><a href="mailto:me@rinchong.kim">me@rinchong.kim</a></h3>
 						<h3><a href="https://www.linkedin.com/in/rinchong-kim/">LinkedIn</a></h3>
 						<h3><a href="https://www.instagram.com/rinchong.kim/">Instagram</a></h3>
