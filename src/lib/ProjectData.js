@@ -1,8 +1,13 @@
+import pickAndPlayThumb from '$lib/img/pick-and-play/thumbnail.png';
+import careerDiveThumb from '$lib/img/career-dive/thumbnail.png';
+import daconThumb from '$lib/img/dacon/thumbnail.png';
+import hwanghakCasualThumb from '$lib/img/hwanghak-casual/thumbnail.png';
+
 export const projects = [
 	{
 		title: 'Pick and Play',
 		slug: 'pick-and-play',
-		thumbnail: '/img/pick-and-play/thumbnail.png',
+		thumbnail: pickAndPlayThumb,
 		excerpt: 'Vinyl collectors’ platform',
 		tags: ['UI/UX', 'Branding'],
 		date: {
@@ -15,7 +20,7 @@ export const projects = [
 	{
 		title: 'Career Dive',
 		slug: 'career-dive',
-		thumbnail: '/img/career-dive/thumbnail.png',
+		thumbnail: careerDiveThumb,
 		excerpt: 'Career advising and mentoring platform',
 		tags: ['UI/UX'],
 		date: {
@@ -28,7 +33,7 @@ export const projects = [
 	{
 		title: 'Dacon',
 		slug: 'dacon',
-		thumbnail: '/img/dacon/thumbnail.png',
+		thumbnail: daconThumb,
 		excerpt: 'Data science competition & hackathon platform',
 		tags: ['UI/UX', 'Web'],
 		date: {
@@ -41,7 +46,7 @@ export const projects = [
 	{
 		title: 'Hwanghak Casual',
 		slug: 'hwanghak-casual',
-		thumbnail: '/img/hwanghak-casual/thumbnail.png',
+		thumbnail: hwanghakCasualThumb,
 		excerpt: 'Local workwear brand from Hwanghak-dong, Seoul',
 		tags: ['Branding', 'Web', 'Fashion'],
 		date: {
@@ -54,7 +59,7 @@ export const projects = [
 	{
 		title: 'Hwanghak Casual',
 		slug: 'hwanghak-casual-2',
-		thumbnail: '/img/hwanghak-casual/thumbnail.png',
+		thumbnail: hwanghakCasualThumb,
 		excerpt: 'Local workwear brand from Hwanghak-dong, Seoul',
 		tags: ['Branding', 'Web', 'Fashion'],
 		date: {
