@@ -1,6 +1,7 @@
 <script>
 	import Card from '../../components/Card.svelte';
 	import { fade, scale } from 'svelte/transition';
+	import { onMount } from 'svelte';
 	let { data } = $props();
 
 	// Get unique tags from all projects
@@ -14,9 +15,25 @@
 	);
 
 	// Calculate number of columns based on viewport width
-	let columns = $derived(
-		window.innerWidth >= 1024 ? 4 : window.innerWidth >= 768 ? 3 : window.innerWidth >= 480 ? 2 : 1
-	);
+	let columns = $state(4); // Default to desktop layout
+
+	// Move window check to onMount
+	onMount(() => {
+		const updateColumns = () => {
+			columns =
+				window.innerWidth >= 1024
+					? 4
+					: window.innerWidth >= 768
+						? 3
+						: window.innerWidth >= 480
+							? 2
+							: 1;
+		};
+
+		updateColumns();
+		window.addEventListener('resize', updateColumns);
+		return () => window.removeEventListener('resize', updateColumns);
+	});
 
 	// Calculate number of empty cards needed to fill last row
 	let emptyCards = $derived(() => {
