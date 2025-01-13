@@ -58,7 +58,7 @@ export const projects = [
 	},
 	{
 		title: 'Hwanghak Casual',
-		slug: 'hwanghak-casual',
+		slug: 'hwanghak-casual-2',
 		thumbnail: hwanghakCasualThumb,
 		excerpt: 'Local workwear brand from Hwanghak-dong, Seoul',
 		tags: ['Branding', 'Web', 'Fashion'],

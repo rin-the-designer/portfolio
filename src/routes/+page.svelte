@@ -10,4 +10,4 @@
 	height="360px"
 	scrolling="no"
 ></iframe>
-<Card projects={data.summaries} />
+<!-- <Card projects={data.summaries} /> -->

@@ -82,14 +82,16 @@
 	}
 
 	.footer-link {
+		width: fit-content;
 		font-size: 2rem;
 		text-decoration: underline;
 		color: var(--black);
-		transition: color 0.2s ease-in-out;
+		transition: all 0.2s ease-in-out;
 	}
 
 	.footer-link:hover {
-		color: var(--main-color);
+		background-color: var(--main-color);
+		color: white;
 	}
 
 	.time-display {

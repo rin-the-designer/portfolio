@@ -1,4 +1,7 @@
 <script lang="ts">
+	import { createEventDispatcher } from 'svelte';
+	const dispatch = createEventDispatcher();
+
 	interface Project {
 		title: string;
 		slug: string;
@@ -7,52 +10,27 @@
 		tags: string[];
 	}
 
-	export let projects: Project[];
-	let width: number;
-	let totalSpaces: number = 1;
-
-	$: totalSpaces = width >= 1024 ? 4 : width >= 768 ? 3 : width >= 480 ? 2 : 1;
+	export let project: Project;
 </script>
 
-<svelte:window bind:innerWidth={width} />
-
-<div class="card-container">
-	{#each projects as project}
-		<div class="card">
-			<img src={project.thumbnail} alt="{project.title} Thumbnail" />
-			<div class="card-text">
-				<h1>{project.title}</h1>
-				<p>{project.excerpt}</p>
-				<div class="tags">
-					{#each project.tags as tag}
-						<span class="tag">{tag}</span>
-					{/each}
-				</div>
-			</div>
+<div class="card">
+	<img src={project.thumbnail} alt="{project.title} Thumbnail" />
+	<div class="card-text">
+		<h1>{project.title}</h1>
+		<div class="excerpt">
+			<p>{project.excerpt}</p>
 		</div>
-	{/each}
-
-	{#if projects.length % totalSpaces !== 0}
-		<div
-			class="card empty-card"
-			style="grid-column: span {totalSpaces - (projects.length % totalSpaces)};"
-		>
-			<div class="card-text">
-				<h1>More projects coming soon...</h1>
-			</div>
+		<div class="tags">
+			{#each project.tags as tag}
+				<button type="button" class="tag" on:click={() => dispatch('tagSelect', tag)}>
+					{tag}
+				</button>
+			{/each}
 		</div>
-	{/if}
+	</div>
 </div>
 
 <style>
-	:global(.card-container) {
-		display: grid;
-		grid-template-columns: repeat(1, 1fr);
-		gap: 2px;
-		background-color: var(--black);
-		padding: 2px 0;
-	}
-
 	.card {
 		display: flex;
 		flex-direction: column;
@@ -97,6 +75,10 @@
 		font-size: 0.75rem;
 		color: var(--black);
 		transition: all 0.2s ease-in-out;
+		border: none;
+		background: none;
+		padding: 0;
+		cursor: pointer;
 	}
 
 	.tags .tag:hover {
@@ -126,16 +108,14 @@
 		}
 	}
 
-	.empty-card {
-		background-color: white;
-		height: 100%;
-		box-shadow: 0px 0px 2px 0px white;
-	}
-
-	.empty-card .card-text {
-		height: 100%;
-		justify-content: center;
-		align-items: center;
-		text-align: center;
+	.excerpt p {
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		line-clamp: 2;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		margin: 0;
+		height: 2.625rem;
 	}
 </style>
