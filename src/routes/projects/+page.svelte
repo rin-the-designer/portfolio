@@ -1,6 +1,5 @@
 <script>
 	import Card from '../../components/Card.svelte';
-	import { fade, scale } from 'svelte/transition';
 	import { onMount } from 'svelte';
 	let { data } = $props();
 
@@ -56,13 +55,11 @@
 
 <div class="card-container">
 	{#each filteredProjects as project (project.slug)}
-		<div transition:fade|local={{ duration: 200 }}>
-			<Card {project} on:tagSelect={(event) => (selectedTag = event.detail)} />
-		</div>
+		<Card {project} on:tagSelect={(event) => (selectedTag = event.detail)} />
 	{/each}
-	{#each Array(emptyCards) as _}
-		<div class="empty-card"></div>
-	{/each}
+	{#if emptyCards() > 0}
+		<div class="empty-card" style="grid-column: span {emptyCards()}"></div>
+	{/if}
 </div>
 
 <style>
