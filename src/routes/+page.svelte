@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Card from '../components/Card.svelte';
+	import Card from '../components/ProjectCard.svelte';
 	let { data } = $props();
 </script>
 
@@ -10,4 +10,3 @@
 	height="360px"
 	scrolling="no"
 ></iframe>
-<!-- <Card projects={data.summaries} /> -->

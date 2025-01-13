@@ -229,7 +229,7 @@
 	}
 
 	.category-item h3 {
-		font-size: 1.5rem;
+		font-size: 1.25rem;
 	}
 
 	.category-item h3 a {

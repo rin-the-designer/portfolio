@@ -7,7 +7,8 @@ export function load() {
 			slug: project.slug,
 			thumbnail: project.thumbnail,
 			excerpt: project.excerpt,
-			tags: project.tags
+			tags: project.tags,
+			date: project.date
 		}))
 	};
 }
