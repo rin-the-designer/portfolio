@@ -4,22 +4,9 @@
 	import { onMount } from 'svelte';
 	let { data } = $props();
 
-	// Get unique tags from all projects and count projects per tag
+	// Get unique tags from all projects
 	let allTags = ['All', ...new Set(data.summaries.flatMap((project) => project.tags))];
 	let selectedTag = $state('All');
-
-	// Add this derived store to calculate counts
-	let tagCounts = $derived(
-		Object.fromEntries(
-			allTags.map((tag) => [
-				tag,
-				tag === 'All'
-					? data.summaries.length
-					: data.summaries.filter((project) => project.tags.includes(tag)).length
-			])
-		)
-	);
-
 	// Filter projects based on selected tag
 	let filteredProjects = $derived(
 		selectedTag === 'All'
