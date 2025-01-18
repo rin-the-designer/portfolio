@@ -2,7 +2,7 @@ export const projects = [
 	{
 		title: 'Pick and Play',
 		slug: 'pick-and-play',
-		thumbnail: '/img/pick-and-play/thumbnail.png',
+		thumbnail: '/img/projects/pick-and-play/thumbnail.png',
 		excerpt: 'Vinyl collectors’ platform',
 		tags: ['UI/UX', 'Branding'],
 		date: {
@@ -15,7 +15,7 @@ export const projects = [
 	{
 		title: 'Career Dive',
 		slug: 'career-dive',
-		thumbnail: '/img/career-dive/thumbnail.png',
+		thumbnail: '/img/projects/career-dive/thumbnail.png',
 		excerpt: 'Career advising and mentoring platform',
 		tags: ['UI/UX', 'Branding'],
 		date: {
@@ -28,7 +28,7 @@ export const projects = [
 	{
 		title: 'Dacon',
 		slug: 'dacon',
-		thumbnail: '/img/dacon/thumbnail.png',
+		thumbnail: '/img/projects/dacon/thumbnail.png',
 		excerpt: 'Data science competition & hackathon platform',
 		tags: ['UI/UX', 'Web'],
 		date: {
@@ -41,7 +41,7 @@ export const projects = [
 	{
 		title: 'Hwanghak Casual',
 		slug: 'hwanghak-casual',
-		thumbnail: '/img/hwanghak-casual/thumbnail.png',
+		thumbnail: '/img/projects/hwanghak-casual/thumbnail.png',
 		excerpt: 'Local workwear brand from Hwanghak-dong, Seoul',
 		tags: ['Branding', 'Web', 'Fashion'],
 		date: {
@@ -54,7 +54,7 @@ export const projects = [
 	{
 		title: 'Dolbomgil',
 		slug: 'dolbomgil',
-		thumbnail: '/img/dolbomgil/thumbnail.png',
+		thumbnail: '/img/projects/dolbomgil/thumbnail.png',
 		excerpt: 'Design/business proposal for child care service',
 		tags: ['UI/UX', 'Branding', 'Proposal'],
 		date: {
@@ -67,7 +67,7 @@ export const projects = [
 	{
 		title: 'MOCA',
 		slug: 'moca',
-		thumbnail: '/img/moca/thumbnail.png',
+		thumbnail: '/img/projects/moca/thumbnail.png',
 		excerpt: 'Café finder for dietary restrictions',
 		tags: ['UI/UX', 'Branding', 'Proposal'],
 		date: {
@@ -80,7 +80,7 @@ export const projects = [
 	{
 		title: 'Seoul Bike App Design Proposal',
 		slug: 'seoul-bike',
-		thumbnail: '/img/seoul-bike/thumbnail.png',
+		thumbnail: '/img/projects/seoul-bike/thumbnail.png',
 		excerpt: 'Design proposal for Seoul Bike app',
 		tags: ['UI/UX', 'Proposal', 'Concept'],
 		date: {
@@ -93,7 +93,7 @@ export const projects = [
 	{
 		title: 'Dreamers',
 		slug: 'dreamers',
-		thumbnail: '/img/dreamers/thumbnail.png',
+		thumbnail: '/img/projects/dreamers/thumbnail.png',
 		excerpt: 'Social cooperative in Suwon, Gyeonggi-do',
 		tags: ['Branding', 'Web'],
 		date: {
@@ -106,7 +106,7 @@ export const projects = [
 	{
 		title: 'YSL Legacy Book',
 		slug: 'ysl-legacy-book',
-		thumbnail: '/img/ysl-legacy-book/thumbnail.png',
+		thumbnail: '/img/projects/ysl-legacy-book/thumbnail.png',
 		excerpt: 'A concept legacy book for fashion designerYves Saint Laurent',
 		tags: ['Editorial', 'Concept'],
 		date: {
@@ -119,7 +119,7 @@ export const projects = [
 	{
 		title: 'A Week of Vinyl Records',
 		slug: 'a-week-of-vinyl-records',
-		thumbnail: '/img/a-week-of-vinyl-records/thumbnail.png',
+		thumbnail: '/img/projects/a-week-of-vinyl-records/thumbnail.png',
 		excerpt: 'A one week project of archiving vinyl records',
 		tags: ['Editorial'],
 		date: {
@@ -132,7 +132,7 @@ export const projects = [
 	{
 		title: 'Bauhaus 100th Anniversary',
 		slug: 'bauhaus-100',
-		thumbnail: '/img/bauhaus-100/thumbnail.png',
+		thumbnail: '/img/projects/bauhaus-100/thumbnail.png',
 		excerpt: 'Concept poster for Bauhaus 100th Anniversary exhibition',
 		tags: ['Editorial', 'Concept'],
 		date: {
@@ -145,7 +145,7 @@ export const projects = [
 	{
 		title: 'THENOW',
 		slug: 'thenow',
-		thumbnail: '/img/thenow/thumbnail.png',
+		thumbnail: '/img/projects/thenow/thumbnail.png',
 		excerpt: 'Concept magazine exploring the design connection between THEN and NOW',
 		tags: ['Editorial'],
 		date: {
@@ -158,7 +158,7 @@ export const projects = [
 	{
 		title: 'Teasign',
 		slug: 'teasign',
-		thumbnail: '/img/teasign/thumbnail.png',
+		thumbnail: '/img/projects/teasign/thumbnail.png',
 		excerpt: 'A tea brand designed with the patterns of each material',
 		tags: ['Editorial', 'Branding'],
 		date: {

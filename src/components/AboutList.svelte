@@ -48,7 +48,7 @@
 </script>
 
 <div class="about-container">
-	<div class="about-category">
+	<div class="about-category" style="border-top: none;">
 		<h2>About</h2>
 		<div class="category-items">
 			<div class="category-item">
