@@ -17,11 +17,16 @@
 	type Item = { title: string; thumbnail: string };
 	let allItems = $state<Item[]>([]);
 	onMount(() => {
-		allItems = shuffleArray([...data.photographyData, ...data.posterData, ...data.logoData]);
+		allItems = shuffleArray([
+			...data.photographyData,
+			...data.posterData,
+			...data.logoData,
+			...data.codingData
+		]);
 	});
 
 	// Get unique categories based on the data type
-	let allCategories = ['All', 'Photography', 'Poster', 'Logo'];
+	let allCategories = ['All', 'Photography', 'Poster', 'Logo', 'Coding'];
 	let selectedCategory = $state('All');
 
 	// Filter items based on selected category
@@ -34,6 +39,8 @@
 					if (selectedCategory === 'Poster')
 						return data.posterData.some((p) => p.title === item.title);
 					if (selectedCategory === 'Logo') return data.logoData.some((p) => p.title === item.title);
+					if (selectedCategory === 'Coding')
+						return data.codingData.some((p) => p.title === item.title);
 					return false;
 				})
 	);

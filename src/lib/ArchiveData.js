@@ -2,7 +2,7 @@ export const photographies = [
 	{
 		title: 'Nice, FR 🇫🇷',
 		slug: 'photographies/nice-fr',
-		thumbnail: '/img/archive/photographies/nice-fr/nice-fr-00001.jpg',
+		thumbnail: '/img/archive/photographies/nice-fr/thumbnail.png',
 		tags: 'Photography',
 		date: {
 			year: 2019,
@@ -13,7 +13,7 @@ export const photographies = [
 	{
 		title: 'Inje, KR 🇰🇷',
 		slug: 'photographies/inje-kr',
-		thumbnail: '/img/archive/photographies/inje-kr/inje-kr-00001.jpg',
+		thumbnail: '/img/archive/photographies/inje-kr/thumbnail.png',
 		tags: 'Photography',
 		date: {
 			year: 2019,
@@ -166,5 +166,74 @@ export const logos = [
 			month: 1
 		},
 		intro: 'Logo for HUE Counseling Center'
+	}
+];
+
+export const coding = [
+	{
+		title: "Amy's Umbrella",
+		slug: 'codings/amys-umbrella',
+		thumbnail: '/img/archive/codings/amys-umbrella/thumbnail.png',
+		tags: 'Coding',
+		date: {
+			year: 2024,
+			month: 9
+		},
+		intro: 'Logo for Dacon'
+	},
+	{
+		title: 'Personal Space',
+		slug: 'codings/personal-space',
+		thumbnail: '/img/archive/codings/personal-space/thumbnail.png',
+		tags: 'Coding',
+		date: {
+			year: 2024,
+			month: 9
+		},
+		intro: 'Logo for Dacon'
+	},
+	{
+		title: 'Time in Alcohol Bottles',
+		slug: 'codings/time-in-alcohol-bottles',
+		thumbnail: '/img/archive/codings/time-in-alcohol-bottles/thumbnail.png',
+		tags: 'Coding',
+		date: {
+			year: 2024,
+			month: 9
+		},
+		intro: 'Logo for Dacon'
+	},
+	{
+		title: 'Optical Illusion',
+		slug: 'codings/optical-illusion',
+		thumbnail: '/img/archive/codings/optical-illusion/thumbnail.png',
+		tags: 'Coding',
+		date: {
+			year: 2024,
+			month: 10
+		},
+		intro: 'Logo for Dacon'
+	},
+	{
+		title: 'Data Encryption',
+		slug: 'codings/data-encryption',
+		thumbnail: '/img/archive/codings/data-encryption/thumbnail.png',
+		tags: 'Coding',
+		date: {
+			year: 2024,
+			month: 10
+		},
+		intro: 'Logo for Dacon'
+	},
+	{
+		title: 'Adventrue of Rin',
+		slug: 'codings/adventure-of-rin',
+		thumbnail: '/img/archive/codings/adventure-of-rin/thumbnail.png',
+		tags: 'Coding',
+		date: {
+			year: 2024,
+			month: 10
+		},
+		intro: 'Logo for Dacon'
 	}
 ];
