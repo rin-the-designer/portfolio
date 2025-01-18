@@ -6,19 +6,23 @@ export function load() {
 	return {
 		photographyData: photographies.map((photography) => ({
 			title: photography.title,
-			thumbnail: photography.thumbnail
+			thumbnail: photography.thumbnail,
+			slug: photography.slug
 		})),
 		posterData: posters.map((poster) => ({
 			title: poster.title,
-			thumbnail: poster.thumbnail
+			thumbnail: poster.thumbnail,
+			slug: poster.slug
 		})),
 		logoData: logos.map((logo) => ({
 			title: logo.title,
-			thumbnail: logo.thumbnail
+			thumbnail: logo.thumbnail,
+			slug: logo.slug
 		})),
 		codingData: coding.map((coding) => ({
 			title: coding.title,
-			thumbnail: coding.thumbnail
+			thumbnail: coding.thumbnail,
+			slug: coding.slug
 		}))
 	};
 }

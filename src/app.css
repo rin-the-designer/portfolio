@@ -28,6 +28,7 @@
 :root {
 	--main-color: #0085ff;
 	--black: #181818;
+	--header-height: 48px;
 }
 
 html {

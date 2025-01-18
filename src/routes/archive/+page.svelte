@@ -14,7 +14,7 @@
 	}
 
 	// Combine and shuffle all items on mount
-	type Item = { title: string; thumbnail: string };
+	type Item = { title: string; thumbnail: string; slug: string };
 	let allItems = $state<Item[]>([]);
 	onMount(() => {
 		allItems = shuffleArray([

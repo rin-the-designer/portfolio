@@ -2,12 +2,15 @@
 	interface Item {
 		title: string;
 		thumbnail: string;
+		slug: string;
 	}
 
 	export let item: Item;
 </script>
 
-<img src={item.thumbnail} alt="{item.title} Thumbnail" />
+<a href={`/archive/${item.slug}`}>
+	<img src={item.thumbnail} alt="{item.title} Thumbnail" />
+</a>
 
 <style>
 	img {
