@@ -3,7 +3,7 @@ export const photographies = [
 		title: 'Nice, FR 🇫🇷',
 		slug: 'photographies/nice-fr',
 		thumbnail: '/img/archive/photographies/nice-fr/thumbnail.png',
-		mainImage: '/img/archive/photographies/nice-fr/main.png',
+		mainImage: '/img/archive/photographies/nice-fr/main.jpg',
 		tags: 'Photography',
 		date: {
 			year: 2019,
@@ -15,7 +15,7 @@ export const photographies = [
 		title: 'Inje, KR 🇰🇷',
 		slug: 'photographies/inje-kr',
 		thumbnail: '/img/archive/photographies/inje-kr/thumbnail.png',
-		mainImage: '/img/archive/photographies/inje-kr/main.png',
+		mainImage: '/img/archive/photographies/inje-kr/main.jpg',
 		tags: 'Photography',
 		date: {
 			year: 2019,
