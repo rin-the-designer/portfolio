@@ -55,7 +55,7 @@
 		height: 100%;
 		font-size: 1.25rem;
 		line-height: 1.25rem;
-		transition: background-color 0.2s ease-in-out;
+		transition: all 0.2s ease-in-out;
 	}
 
 	.header .menu a.last {

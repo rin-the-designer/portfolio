@@ -1,5 +1,5 @@
 <script lang="ts">
-	import TitleArea from '../../../components/TitleArea.svelte';
+	import TitleArea from '../../../components/ArchiveTitleArea.svelte';
 	import type { PageData } from './$types';
 
 	export let data: PageData;

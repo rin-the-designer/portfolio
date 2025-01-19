@@ -1,6 +1,7 @@
 <script lang="ts">
 	import ArchiveCard from '../../components/ArchiveCard.svelte';
 	import { onMount } from 'svelte';
+	import { goto } from '$app/navigation';
 	let { data } = $props();
 
 	// Function to shuffle array
@@ -14,9 +15,15 @@
 	}
 
 	// Combine and shuffle all items on mount
-	type Item = { title: string; thumbnail: string; slug: string };
+	type Item = { title: string; thumbnail: string; mainImage: string; slug: string };
 	let allItems = $state<Item[]>([]);
 	onMount(() => {
+		const urlParams = new URLSearchParams(window.location.search);
+		const categoryParam = urlParams.get('category');
+		if (categoryParam && allCategories.includes(categoryParam)) {
+			selectedCategory = categoryParam;
+		}
+
 		allItems = shuffleArray([
 			...data.photographyData,
 			...data.posterData,
@@ -71,6 +78,18 @@
 		const remainder = filteredItems.length % columns;
 		return remainder === 0 ? 0 : columns - remainder;
 	});
+
+	// Update URL when category changes
+	async function updateCategory(category: string) {
+		selectedCategory = category;
+		const url = new URL(window.location.href);
+		if (category === 'All') {
+			url.searchParams.delete('category');
+		} else {
+			url.searchParams.set('category', category);
+		}
+		await goto(url.toString(), { replaceState: true });
+	}
 </script>
 
 <div class="filter-container">
@@ -79,7 +98,7 @@
 			<button
 				class="filter-tag"
 				class:active={selectedCategory === category}
-				onclick={() => (selectedCategory = category)}
+				onclick={() => updateCategory(category)}
 			>
 				{category}
 			</button>
