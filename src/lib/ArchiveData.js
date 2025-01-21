@@ -9,7 +9,7 @@ export const photographies = [
 			year: 2019,
 			month: 7
 		},
-		intro: 'Photos from Nice, France'
+		intro: ['Photos from Nice, France']
 	},
 	{
 		title: 'Inje, KR 🇰🇷',
@@ -21,7 +21,7 @@ export const photographies = [
 			year: 2019,
 			month: 1
 		},
-		intro: 'Photos from Inje, Korea'
+		intro: ['Photos from Inje, Korea']
 	}
 ];
 
@@ -36,7 +36,7 @@ export const posters = [
 			year: 2021,
 			month: 6
 		},
-		intro: 'Poster for LG AI Hackathon 4, hosted by LG AI Research and organized by Dacon.'
+		intro: ['Poster for LG AI Hackathon 4, hosted by LG AI Research and organized by Dacon.']
 	},
 	{
 		title: 'LG AI Hackathon 2',
@@ -48,7 +48,7 @@ export const posters = [
 			year: 2020,
 			month: 9
 		},
-		intro: 'Poster for LG AI Hackathon 2, hosted by LG AI Research and organized by Dacon.'
+		intro: ['Poster for LG AI Hackathon 2, hosted by LG AI Research and organized by Dacon.']
 	},
 	{
 		title: 'Ministry of Land, Infrastructure and Transport Online Hackathon',
@@ -60,8 +60,9 @@ export const posters = [
 			year: 2020,
 			month: 8
 		},
-		intro:
+		intro: [
 			'Poster for the Big Data Online Hackathon, hosted by Ministry of Land, Infrastructure and Transport (Rupublic of Korea, 대한민국 국토교통부), organized by EX, KORAIL, TS, and KOTI on Dacon.'
+		]
 	},
 	{
 		title: 'Dankook Univ. AI Competition',
@@ -73,8 +74,9 @@ export const posters = [
 			year: 2020,
 			month: 8
 		},
-		intro:
+		intro: [
 			'Poster for Dankook University Data Analysis AI Competition, hosted by Dankook University, Yongin City, IITP, and organized by Dacon.'
+		]
 	},
 	{
 		title: 'KT AI Hackathon',
@@ -86,8 +88,9 @@ export const posters = [
 			year: 2020,
 			month: 8
 		},
-		intro:
+		intro: [
 			'Poster for an online AI hackathon, Post COVID-19 Data Visualization Competition, hosted by KT and organized by Korea Startup Forum, sponsored by National Information Agency(Republic of Korea, 한국정보화진흥원) on Dacon.'
+		]
 	},
 	{
 		title: 'NIS HAICon 2020',
@@ -99,8 +102,9 @@ export const posters = [
 			year: 2020,
 			month: 8
 		},
-		intro:
+		intro: [
 			'Poster for an online AI hackathon, HAICon 2020, hosted by the National Intelligence Service(Republic of Korea, 국가정보원) and organized by the National Security Research Institute(Republic of Korea, 국가보안기술연구소) on Dacon.'
+		]
 	},
 	{
 		title: 'Jeju Big Data Competition',
@@ -112,8 +116,9 @@ export const posters = [
 			year: 2020,
 			month: 6
 		},
-		intro:
+		intro: [
 			'Poster for an online AI hackathon, Jeju Big Data Competition, hosted by Jeju Island(Republic of Korea) and organized by Dacon.'
+		]
 	},
 	{
 		title: '2020 Raise Uganda Now Recruiting Poster',
@@ -125,8 +130,9 @@ export const posters = [
 			year: 2020,
 			month: 2
 		},
-		intro:
+		intro: [
 			'Recruiting poster for Raise Uganda Now, NGO based in Uganda, United States and South Korea.'
+		]
 	},
 	{
 		title: 'Korea Food Lifestyle Demo Day',
@@ -138,8 +144,9 @@ export const posters = [
 			year: 2019,
 			month: 11
 		},
-		intro:
+		intro: [
 			'Poster for Korea Food Lifestyle Demo Day, hosted by D.CAMP, sponsored by Nestle and Northern Light Venture Capital.'
+		]
 	},
 	{
 		title: '2018 Raise Uganda Now Birthday Fundraiser',
@@ -151,8 +158,9 @@ export const posters = [
 			year: 2018,
 			month: 7
 		},
-		intro:
+		intro: [
 			'Birthday fundraiser poster for Raise Uganda Now, NGO based in Uganda, United States and South Korea.'
+		]
 	}
 ];
 
@@ -167,7 +175,7 @@ export const logos = [
 			year: 2021,
 			month: 11
 		},
-		intro: 'Logo for insight360'
+		intro: ['Logo for insight360']
 	},
 	{
 		title: 'HUE Counseling Center',
@@ -179,7 +187,7 @@ export const logos = [
 			year: 2020,
 			month: 1
 		},
-		intro: 'Logo for HUE Counseling Center'
+		intro: ['Logo for HUE Counseling Center']
 	}
 ];
 
@@ -194,7 +202,11 @@ export const coding = [
 			year: 2024,
 			month: 9
 		},
-		intro: 'Logo for Dacon'
+		intro: [
+			'Course work from PGTE 5250, Critical Computation from Parsons School of Design.',
+			"I paired up with Amy to draw an object that we've each lost in the past. Amy lost her umbrella before she moved to New York. This was my very first project using p5.js, and since I had a little experience using html/css/js, I wanted to give myself a little bit of challenge by using 3D primitives. It was a bit more challenging than I expected, but I'm glad I was able to make it work in some scale."
+		],
+		iframe: 'https://cc.rinchong.kim/lost-and-found/index.html'
 	},
 	{
 		title: 'Personal Space',
@@ -206,7 +218,8 @@ export const coding = [
 			year: 2024,
 			month: 9
 		},
-		intro: 'Logo for Dacon'
+		intro: ['Course work from PGTE 5250, Critical Computation from Parsons School of Design.'],
+		iframe: 'https://cc.rinchong.kim/face-generator/index.html'
 	},
 	{
 		title: 'Time in Alcohol Bottles',
@@ -218,7 +231,8 @@ export const coding = [
 			year: 2024,
 			month: 9
 		},
-		intro: 'Logo for Dacon'
+		intro: ['Course work from PGTE 5250, Critical Computation from Parsons School of Design.'],
+		iframe: 'https://cc.rinchong.kim/experimental-clock/index.html'
 	},
 	{
 		title: 'Optical Illusion',
@@ -230,7 +244,8 @@ export const coding = [
 			year: 2024,
 			month: 10
 		},
-		intro: 'Logo for Dacon'
+		intro: ['Course work from PGTE 5250, Critical Computation from Parsons School of Design.'],
+		iframe: 'https://cc.rinchong.kim/optical-illusion/index.html'
 	},
 	{
 		title: 'Data Encryption',
@@ -242,7 +257,8 @@ export const coding = [
 			year: 2024,
 			month: 10
 		},
-		intro: 'Logo for Dacon'
+		intro: ['Course work from PGTE 5250, Critical Computation from Parsons School of Design.'],
+		iframe: 'https://cc.rinchong.kim/data-portrait/index.html'
 	},
 	{
 		title: 'Adventrue of Rin',
@@ -254,6 +270,7 @@ export const coding = [
 			year: 2024,
 			month: 10
 		},
-		intro: 'Logo for Dacon'
+		intro: ['Course work from PGTE 5250, Critical Computation from Parsons School of Design.'],
+		iframe: 'https://cc.rinchong.kim/autobiographical-game/index.html'
 	}
 ];
