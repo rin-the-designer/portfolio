@@ -218,7 +218,10 @@ export const coding = [
 			year: 2024,
 			month: 9
 		},
-		intro: ['Course work from PGTE 5250, Critical Computation from Parsons School of Design.'],
+		intro: [
+			'Course work from PGTE 5250, Critical Computation from Parsons School of Design.',
+			"I got an idea from Tsing's Physical Computing assignment, where she plugged in a ultrasonic sensor on an arduino to make a motor go crazy when someone got really close to it. I tried to make a p5.js version of it, where if you get too close to the face, it starts to turn red, shake and make an alert sound."
+		],
 		iframe: 'https://cc.rinchong.kim/face-generator/index.html'
 	},
 	{
@@ -231,7 +234,10 @@ export const coding = [
 			year: 2024,
 			month: 9
 		},
-		intro: ['Course work from PGTE 5250, Critical Computation from Parsons School of Design.'],
+		intro: [
+			'Course work from PGTE 5250, Critical Computation from Parsons School of Design.',
+			"I don't know why thought of this, but I guess it was because I really wanted to drink beer with soju at the time of the ideation process. By the way, soju is usually $1 ~ $1.5 per bottle at a Korean convenience store. The time on the first third indicates the real time, second third is how many bottles of beer are drank and the third is how many bottles of soju are drank. To be honest, I can't drink that much, but this is usually how much three of my friends and I drink together."
+		],
 		iframe: 'https://cc.rinchong.kim/experimental-clock/index.html'
 	},
 	{
@@ -244,7 +250,10 @@ export const coding = [
 			year: 2024,
 			month: 10
 		},
-		intro: ['Course work from PGTE 5250, Critical Computation from Parsons School of Design.'],
+		intro: [
+			'Course work from PGTE 5250, Critical Computation from Parsons School of Design.',
+			'We were asked to make an optical illusion using p5.js. I made two layers of patterns that only moves diagonally, but the inner pattern seems to be moving when the direction changes. I made it draggable so that the effect would be more visible. Try dragging the pattern!'
+		],
 		iframe: 'https://cc.rinchong.kim/optical-illusion/index.html'
 	},
 	{
@@ -257,7 +266,10 @@ export const coding = [
 			year: 2024,
 			month: 10
 		},
-		intro: ['Course work from PGTE 5250, Critical Computation from Parsons School of Design.'],
+		intro: [
+			'Course work from PGTE 5250, Critical Computation from Parsons School of Design.',
+			'This is a visualization of my screen time, intentionally encrypted so that it could hide my personal data. The class was asked to gather data for 7 days, and after talking with Amy, I found out that I use a lot of time on my devices compared to others. I thought it would be interesting to visualize this, but in a way that is encrypted so nobody knows exactly how much time I spend on each category of apps.'
+		],
 		iframe: 'https://cc.rinchong.kim/data-portrait/index.html'
 	},
 	{
@@ -270,7 +282,10 @@ export const coding = [
 			year: 2024,
 			month: 10
 		},
-		intro: ['Course work from PGTE 5250, Critical Computation from Parsons School of Design.'],
+		intro: [
+			'Course work from PGTE 5250, Critical Computation from Parsons School of Design.',
+			"Adventure of Rin is a multi-stage mini game collection. I lived abroad in many countries in the past, and I wanted to make a game of things that I wanted or want to avoid in each country. I was also able to make it arduino joystick compatible. If you have a joystick with a button, you can try connecting by pressing 'c' when the game is loaded. (Only on desktop Chromimum browser)"
+		],
 		iframe: 'https://cc.rinchong.kim/autobiographical-game/index.html'
 	}
 ];

@@ -17,15 +17,18 @@
 </script>
 
 <div class="title-area">
-	<div class="title">
-		<h1>{item.title}</h1>
-	</div>
-	<div class="main-image">
-		{#if item.iframe}
-			<iframe src={item.iframe} title={item.title}></iframe>
-		{:else}
-			<img src={item.mainImage} alt={item.title} />
-		{/if}
+	<div class="content-area">
+		<div class="title">
+			<h1>{item.title}</h1>
+		</div>
+		<hr />
+		<div class="main-image">
+			{#if item.iframe}
+				<iframe src={item.iframe} title={item.title} scrolling="no"></iframe>
+			{:else}
+				<img src={item.mainImage} alt={item.title} />
+			{/if}
+		</div>
 	</div>
 	<div class="metadata">
 		<span class="item-tags">
@@ -43,11 +46,14 @@
 <style>
 	.title-area {
 		min-height: calc(100vh - var(--header-height));
-		display: grid;
-		grid-template-columns: 3fr 1fr;
-		grid-template-rows: auto 1fr;
-		background-color: var(--black);
-		gap: 2px;
+		display: flex;
+		flex-direction: row;
+	}
+
+	.content-area {
+		display: flex;
+		flex-direction: column;
+		width: 75%;
 	}
 
 	.title {
@@ -60,20 +66,19 @@
 
 	.main-image {
 		background-color: white;
-		grid-column: 1 / 2;
-		grid-row: 2 / 3;
+		height: 100%;
 	}
 
 	.metadata {
 		background-color: white;
-		grid-column: 2 / 3;
-		grid-row: 1 / 3;
 		display: flex;
 		flex-direction: column;
 		position: sticky;
 		top: var(--header-height);
 		align-self: start;
 		height: calc(100vh - var(--header-height));
+		width: 25%;
+		border-left: 2px solid var(--black);
 	}
 
 	img {
