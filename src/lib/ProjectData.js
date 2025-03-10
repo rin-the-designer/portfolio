@@ -1,5 +1,18 @@
 export const projects = [
 	{
+		title: 'Loops',
+		slug: 'loops',
+		thumbnail: '/img/projects/loops/thumbnail.png',
+		excerpt: 'A collective of loops of life and death',
+		tags: ['Artwork', 'Coding'],
+		date: {
+			year: 2022,
+			month: 10
+		},
+		intro:
+			"Pick & Play is a vinyl collector's community, offering a platform to buy and sell used vinyl, exchange information about analog music, and consume curated content. Unlike the United States, which maintained a robust community of vinyl enthusiasts even during the decline of analog music, South Korea lacked such space. Thus, Pick & Play addresses the unique challenges faced by young generation Korean vinyl collectors."
+	},
+	{
 		title: 'Pick and Play',
 		slug: 'pick-and-play',
 		thumbnail: '/img/projects/pick-and-play/thumbnail.png',

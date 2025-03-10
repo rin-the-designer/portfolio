@@ -62,10 +62,10 @@
 				window.innerWidth >= 1024
 					? 6
 					: window.innerWidth >= 768
-						? 5
+						? 4
 						: window.innerWidth >= 480
-							? 4
-							: 3;
+							? 3
+							: 2;
 		};
 
 		updateColumns();
@@ -93,17 +93,15 @@
 </script>
 
 <div class="filter-container">
-	<div class="filters">
-		{#each allCategories as category}
-			<button
-				class="filter-tag"
-				class:active={selectedCategory === category}
-				onclick={() => updateCategory(category)}
-			>
-				{category}
-			</button>
-		{/each}
-	</div>
+	{#each allCategories as category}
+		<button
+			class="filter-tag"
+			class:active={selectedCategory === category}
+			onclick={() => updateCategory(category)}
+		>
+			{category}
+		</button>
+	{/each}
 </div>
 
 <div class="archive-container">
@@ -118,9 +116,9 @@
 <style>
 	.filter-container {
 		display: flex;
-		justify-content: space-between;
-		flex-wrap: wrap;
+		overflow-x: auto;
 		position: sticky;
+		gap: 0.5rem;
 		top: 3rem;
 		z-index: 100;
 		background-color: white;
@@ -129,10 +127,8 @@
 		border-bottom: 2px solid var(--black);
 	}
 
-	.filters {
-		display: flex;
-		gap: 0.5rem;
-		flex-wrap: wrap;
+	.filter-container::-webkit-scrollbar {
+		display: none;
 	}
 
 	.filter-tag {
@@ -155,7 +151,7 @@
 
 	.archive-container {
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(2, 1fr);
 		gap: 2px;
 		background-color: var(--black);
 	}
@@ -163,14 +159,14 @@
 	/* Large Mobile: 2 columns */
 	@media (min-width: 480px) {
 		.archive-container {
-			grid-template-columns: repeat(4, 1fr);
+			grid-template-columns: repeat(3, 1fr);
 		}
 	}
 
 	/* Tablet: 4 columns */
 	@media (min-width: 768px) {
 		.archive-container {
-			grid-template-columns: repeat(5, 1fr);
+			grid-template-columns: repeat(4, 1fr);
 		}
 	}
 

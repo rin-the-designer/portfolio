@@ -24,6 +24,7 @@
 		position: sticky;
 		top: 0;
 		z-index: 100;
+		gap: 1rem;
 	}
 
 	.header .logo {
@@ -71,5 +72,25 @@
 		background-color: var(--main-color);
 		color: white;
 		pointer-events: none;
+	}
+
+	@media (max-width: 480px) {
+		.header .menu {
+			position: relative;
+			width: 2rem;
+			height: 2rem;
+		}
+
+		.header .menu::before {
+			content: '';
+			position: absolute;
+			font-size: 2rem;
+			line-height: 2rem;
+			right: 0.5rem;
+		}
+
+		.header .menu a {
+			display: none;
+		}
 	}
 </style>

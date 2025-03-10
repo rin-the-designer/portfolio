@@ -18,10 +18,6 @@
 
 <div class="title-area">
 	<div class="content-area">
-		<div class="title">
-			<h1>{item.title}</h1>
-		</div>
-		<hr />
 		<div class="main-image">
 			{#if item.iframe}
 				<iframe src={item.iframe} title={item.title} scrolling="no"></iframe>
@@ -31,6 +27,10 @@
 		</div>
 	</div>
 	<div class="metadata">
+		<div class="title">
+			<h1>{item.title}</h1>
+		</div>
+		<hr />
 		<span class="item-tags">
 			<a href={`/archive?category=${item.tags}`}>{item.tags}</a>
 		</span>
@@ -58,8 +58,6 @@
 
 	.title {
 		background-color: white;
-		grid-column: 1 / 2;
-		grid-row: 1 / 2;
 		padding: 0.5rem;
 		height: auto;
 	}
@@ -94,8 +92,9 @@
 	}
 
 	.title h1 {
-		font-size: calc(100vw / 16);
+		font-size: 2rem;
 		line-height: 1.2;
+		font-weight: 500;
 	}
 
 	.metadata .item-tags,
@@ -120,5 +119,33 @@
 
 	hr {
 		border-top: 2px solid var(--black);
+	}
+
+	@media (max-width: 1024px) {
+		.metadata {
+			width: 30%;
+		}
+
+		.content-area {
+			width: 70%;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.title-area {
+			flex-direction: column;
+		}
+
+		.content-area {
+			width: 100%;
+			aspect-ratio: 1 / 1;
+		}
+
+		.metadata {
+			width: 100%;
+			border-top: 2px solid var(--black);
+			border-left: none;
+			height: auto;
+		}
 	}
 </style>

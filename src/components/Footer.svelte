@@ -1,6 +1,6 @@
 <script lang="ts">
-	const TIMEZONE = 'America/New_York';
-	//for Seoul: 'Asia/Seoul'
+	const TIMEZONE = 'Asia/Seoul';
+	//for New York: 'America/New_York'
 
 	const getGMTOffset = (timezone: string): string => {
 		const offset = new Date()
@@ -22,7 +22,7 @@
 <div class="footer">
 	<div class="footer-1">
 		<div class="footer-item-container">
-			<div>Currently in 🗽</div>
+			<div>Currently in 🇰🇷</div>
 			<div class="time-display">
 				{currentTime?.toLocaleDateString('en-US', {
 					timeZone: TIMEZONE,

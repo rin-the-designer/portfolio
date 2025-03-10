@@ -58,15 +58,15 @@
 	}
 
 	.excerpt {
-		width: 25%;
+		width: 40%;
 	}
 
 	.excerpt p {
 		font-weight: 400;
 		font-size: 1rem;
 		display: -webkit-box;
-		-webkit-line-clamp: 2;
-		line-clamp: 2;
+		-webkit-line-clamp: 1;
+		line-clamp: 1;
 		-webkit-box-orient: vertical;
 		overflow: hidden;
 		text-overflow: ellipsis;
@@ -100,7 +100,8 @@
 	}
 
 	.date {
-		width: 25%;
+		width: 10%;
+		text-align: right;
 	}
 
 	@media (max-width: 480px) {
@@ -123,6 +124,7 @@
 
 		.date {
 			width: 100%;
+			text-align: left;
 		}
 	}
 </style>

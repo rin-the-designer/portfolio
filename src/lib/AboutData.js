@@ -1,7 +1,7 @@
 export const educations = [
 	{
 		school: 'Parsons School of Design',
-		degree: 'M.F.A. in Design and Technology',
+		degree: 'MFA in Design and Technology',
 		startYear: '2024.08',
 		endYear: '',
 		location: 'New York, NY, USA',
@@ -10,7 +10,7 @@ export const educations = [
 	},
 	{
 		school: 'Kyung Hee University',
-		degree: 'B.F.A. in Visual Design, B.A. in French (Dual Degree)',
+		degree: 'BFA in Visual Design, BA in French (Dual Degree)',
 		startYear: '2017.03',
 		endYear: '2023.02',
 		location: 'Yongin, South Korea',

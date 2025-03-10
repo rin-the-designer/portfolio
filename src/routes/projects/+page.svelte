@@ -88,6 +88,7 @@
 		width: 100%;
 		padding: 0.875rem 0.5rem;
 		border-bottom: 2px solid var(--black);
+		gap: 1rem;
 	}
 
 	.filters {
