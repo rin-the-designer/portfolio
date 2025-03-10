@@ -1,15 +1,39 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import { slide } from 'svelte/transition';
+	let isMenuOpen = false;
+
+	// Close menu when route changes
+	$: {
+		$page.url.pathname;
+		isMenuOpen = false;
+	}
 </script>
 
 <div class="header">
 	<div class="logo">
 		<a href="/">rinchong<span>.</span>kim</a>
 	</div>
-	<div class="menu">
-		<a href="/projects" class:active={$page.url.pathname === '/projects'}>Projects</a>
-		<a href="/information" class:active={$page.url.pathname === '/information'}>Information</a>
-		<a href="/archive" class="last" class:active={$page.url.pathname === '/archive'}>Archive</a>
+	<div class="menu-container">
+		<button
+			class="menu-toggle"
+			on:click={() => (isMenuOpen = !isMenuOpen)}
+			aria-label="Toggle menu"
+		>
+			<img src="/menu-toggle.svg" alt="Menu toggle icon" class:open={isMenuOpen} />
+		</button>
+		<div class="menu desktop">
+			<a href="/projects" class:active={$page.url.pathname === '/projects'}>Projects</a>
+			<a href="/information" class:active={$page.url.pathname === '/information'}>Information</a>
+			<a href="/archive" class="last" class:active={$page.url.pathname === '/archive'}>Archive</a>
+		</div>
+		{#if isMenuOpen}
+			<div class="menu mobile" transition:slide={{ duration: 300 }}>
+				<a href="/projects" class:active={$page.url.pathname === '/projects'}>Projects</a>
+				<a href="/information" class:active={$page.url.pathname === '/information'}>Information</a>
+				<a href="/archive" class="last" class:active={$page.url.pathname === '/archive'}>Archive</a>
+			</div>
+		{/if}
 	</div>
 </div>
 
@@ -45,9 +69,32 @@
 		color: var(--main-color);
 	}
 
+	.header .menu-container {
+		display: flex;
+		gap: 0.5rem;
+	}
+
+	.header .menu-container .menu-toggle {
+		display: none;
+		padding: 0;
+		border: none;
+		background: none;
+		cursor: pointer;
+	}
+
+	.header .menu-container .menu-toggle img {
+		width: 18px;
+		height: 18px;
+		transition: transform 0.3s ease;
+		transform-origin: center;
+	}
+
+	.header .menu-container .menu-toggle img.open {
+		transform: rotate(-45deg);
+	}
+
 	.header .menu {
 		display: flex;
-		height: 100%;
 		gap: 0.5rem;
 		padding-right: 0.5rem;
 	}
@@ -74,23 +121,35 @@
 		pointer-events: none;
 	}
 
+	.header .menu.mobile {
+		display: none;
+	}
+
 	@media (max-width: 480px) {
-		.header .menu {
-			position: relative;
-			width: 2rem;
-			height: 2rem;
+		.header {
+			align-items: flex-start;
 		}
 
-		.header .menu::before {
-			content: '';
-			position: absolute;
-			font-size: 2rem;
-			line-height: 2rem;
-			right: 0.5rem;
+		.header .menu-container {
+			flex-direction: column;
+			align-items: flex-end;
 		}
 
-		.header .menu a {
+		.header .menu-container .menu-toggle {
+			display: block;
+			padding: 13px 0.5rem 13px 0;
+		}
+
+		.header .menu.desktop {
 			display: none;
+		}
+
+		.header .menu.mobile {
+			display: flex;
+			flex-direction: column;
+			gap: 0.5rem;
+			align-items: flex-end;
+			padding-bottom: 1rem;
 		}
 	}
 </style>

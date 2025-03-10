@@ -53,6 +53,7 @@
 		<div class="category-items">
 			<div class="category-item">
 				<div class="category-sub-item">
+					<img class="rin-8bit" src="/favicon.png" alt="Rinchong Kim's 8-bit avatar" />
 					<h3>
 						Rinchong <span style="color: var(--main-color)">(Rin)</span> Kim · 김인종 · 金麟鍾
 					</h3>
@@ -219,6 +220,13 @@
 
 	.category-sub-item {
 		width: 100%;
+	}
+
+	.rin-8bit {
+		max-width: 120px;
+		max-height: 120px;
+		object-fit: cover;
+		margin-bottom: 3rem;
 	}
 
 	.about-category h2 {

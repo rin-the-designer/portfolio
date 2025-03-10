@@ -83,7 +83,6 @@
 		flex-wrap: wrap;
 		position: sticky;
 		top: 3rem;
-		z-index: 100;
 		background-color: white;
 		width: 100%;
 		padding: 0.875rem 0.5rem;
