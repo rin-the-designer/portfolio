@@ -11,6 +11,7 @@
 		name="description"
 		content="Rinchong (Rin) Kim is a Korean designer based in New York, interested in how people interact with digital products. He is passionate about learning new technologies and finding ways to make design more intuitive, inclusive, and interactive."
 	/>
+	<meta property="og:image" content="/og.png" />
 	<meta name="author" content="Rinchong (Rin) Kim" />
 	<meta name="keywords" content="Rin Kim, Rinchong Kim, portfolio, design, art, creative" />
 </svelte:head>

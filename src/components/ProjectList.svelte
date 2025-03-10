@@ -78,7 +78,7 @@
 		flex-wrap: wrap;
 		gap: 0.5rem;
 		width: 25%;
-		align-items: start;
+		align-items: center;
 	}
 
 	.tags .tag {
@@ -104,7 +104,7 @@
 		text-align: right;
 	}
 
-	@media (max-width: 480px) {
+	@media (max-width: 768px) {
 		.list-content {
 			flex-direction: column;
 			gap: 0.5rem;

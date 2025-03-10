@@ -87,27 +87,6 @@
 		cursor: pointer;
 	}
 
-	/* Large Mobile: 2 columns */
-	@media (min-width: 480px) {
-		:global(.card-container) {
-			grid-template-columns: repeat(2, 1fr);
-		}
-	}
-
-	/* Tablet: 3 columns */
-	@media (min-width: 768px) {
-		:global(.card-container) {
-			grid-template-columns: repeat(3, 1fr);
-		}
-	}
-
-	/* Desktop: 4 columns */
-	@media (min-width: 1024px) {
-		:global(.card-container) {
-			grid-template-columns: repeat(4, 1fr);
-		}
-	}
-
 	.excerpt p {
 		display: -webkit-box;
 		-webkit-line-clamp: 2;

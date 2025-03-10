@@ -137,7 +137,7 @@
 
 		.header .menu-container .menu-toggle {
 			display: block;
-			padding: 13px 0.5rem 13px 0;
+			padding: 0.875rem 0.5rem 0.875rem 0;
 		}
 
 		.header .menu.desktop {

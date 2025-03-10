@@ -56,11 +56,9 @@
 			</button>
 		{/each}
 	</div>
-	<div class="sort-view">
-		<button class="view-button" onclick={() => (isCardView = !isCardView)}>
-			{isCardView ? 'List ' : 'Card '}
-		</button>
-	</div>
+	<button class="view-button" onclick={() => (isCardView = !isCardView)}>
+		{isCardView ? 'List ' : 'Card '}
+	</button>
 </div>
 
 <div class={isCardView ? 'card-container' : 'list-container'}>
@@ -164,5 +162,6 @@
 		flex-direction: column;
 		gap: 1px;
 		background-color: var(--black);
+		min-height: calc(100vh - var(--header-height) - 50px);
 	}
 </style>
