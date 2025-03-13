@@ -7,8 +7,13 @@
 
 <svelte:head>
 	<title>Rinchong (Rin) Kim</title>
+	<meta property="og:title" content="Rinchong (Rin) Kim" />
 	<meta
 		name="description"
+		content="Rinchong (Rin) Kim is a Korean designer based in New York, interested in how people interact with digital products. He is passionate about learning new technologies and finding ways to make design more intuitive, inclusive, and interactive."
+	/>
+	<meta
+		property="og:description"
 		content="Rinchong (Rin) Kim is a Korean designer based in New York, interested in how people interact with digital products. He is passionate about learning new technologies and finding ways to make design more intuitive, inclusive, and interactive."
 	/>
 	<meta property="og:image" content="/og.png" />

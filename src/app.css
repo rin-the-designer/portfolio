@@ -34,3 +34,8 @@
 html {
 	font-family: InterVariable, sans-serif;
 }
+
+::selection {
+	background-color: var(--black);
+	color: white;
+}
