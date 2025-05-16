@@ -2,15 +2,15 @@
 	import { projects } from '$lib/ProjectData';
 	import type { Project } from '$lib/types';
 
-	const project = projects.find((p) => p.slug === 'loops');
+	const project = projects.find((p) => p.slug === 'thenow');
 
 	if (!project) {
 		throw new Error('Project not found');
 	}
 </script>
 
-<div class="project-loops">
-	<main class="project-content">
+<div class="project-content">
+	<main>
 		<section class="section">
 			<h2>Overview</h2>
 			<p>{project.intro}</p>
@@ -18,29 +18,26 @@
 
 		<section class="section">
 			<h2>Process</h2>
-			<!-- Your process content -->
+			<!-- Add project-specific process content here -->
 		</section>
 
 		<section class="section">
 			<h2>Outcome</h2>
-			<!-- Your outcome content -->
+			<!-- Add project-specific outcome content here -->
 		</section>
 	</main>
 </div>
 
 <style>
-	.project-loops {
+	.project-content {
 		display: flex;
 		flex-direction: column;
-	}
-
-	:global(.project-loops ::selection) {
-		background-color: #ff8800;
-		color: var(--black);
-	}
-
-	.project-content {
 		padding: 2rem 0;
+	}
+
+	:global(.project-content ::selection) {
+		background-color: var(--accent-color);
+		color: var(--black);
 	}
 
 	.section {
