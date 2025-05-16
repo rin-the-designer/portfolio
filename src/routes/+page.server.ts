@@ -1,14 +1,14 @@
-import { projects } from '$lib/ProjectData.js';
+import { projects } from '$lib/ProjectData';
+import type { PageServerLoad } from './$types';
 
-export function load() {
+export const load: PageServerLoad = () => {
 	return {
 		summaries: projects.map((project) => ({
 			title: project.title,
 			slug: project.slug,
 			thumbnail: project.thumbnail,
 			excerpt: project.excerpt,
-			tags: project.tags,
-			date: project.date
+			tags: project.tags
 		}))
 	};
-}
+};

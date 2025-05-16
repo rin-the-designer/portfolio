@@ -1,6 +1,17 @@
 <script lang="ts">
-	const TIMEZONE = 'Asia/Seoul';
-	//for New York: 'America/New_York'
+	const TIMEZONE = 'America/New_York';
+	//const TIMEZONE = 'Asia/Seoul';
+
+	const getTimezoneEmoji = (timezone: string): string => {
+		switch (timezone) {
+			case 'America/New_York':
+				return '🗽';
+			case 'Asia/Seoul':
+				return '🇰🇷';
+			default:
+				return '';
+		}
+	};
 
 	const getGMTOffset = (timezone: string): string => {
 		const offset = new Date()
@@ -22,7 +33,7 @@
 <div class="footer">
 	<div class="footer-1">
 		<div class="footer-item-container">
-			<div>Currently in 🇰🇷</div>
+			<div>Currently in {getTimezoneEmoji(TIMEZONE)}</div>
 			<div class="time-display">
 				{currentTime?.toLocaleDateString('en-US', {
 					timeZone: TIMEZONE,
@@ -56,14 +67,13 @@
 	.footer {
 		display: flex;
 		flex-direction: row;
-		gap: 1rem;
 		border-top: 2px solid var(--black);
 	}
 
 	.footer-1 {
 		width: 100%;
 		font-size: 1.5rem;
-		padding: 1rem 0.5rem;
+		padding: var(--padding-default);
 	}
 
 	.footer-2 {
@@ -72,7 +82,7 @@
 		flex-direction: column;
 		gap: 2rem;
 		font-size: 1.5rem;
-		padding: 1rem 0.5rem;
+		padding: var(--padding-default);
 	}
 
 	.footer-item-container {

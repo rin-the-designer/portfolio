@@ -1,6 +1,7 @@
 <script lang="ts">
 	import TitleArea from '../../../components/ArchiveTitleArea.svelte';
 	import type { PageData } from './$types';
+	import type { Archive } from '$lib/types';
 
 	export let data: PageData;
 	export const prerender = true;
@@ -9,4 +10,4 @@
 	$: ({ item } = data);
 </script>
 
-<TitleArea {item} />
+<TitleArea archive={item} />

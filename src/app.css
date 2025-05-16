@@ -29,6 +29,9 @@
 	--main-color: #0085ff;
 	--black: #181818;
 	--header-height: 48px;
+	--white: #ffffff;
+	--padding-default: 1rem;
+	--padding-small: 0.5rem;
 }
 
 html {
@@ -37,5 +40,57 @@ html {
 
 ::selection {
 	background-color: var(--black);
-	color: white;
+	color: var(--white);
+}
+
+.header-1 {
+	font-size: 6rem;
+	font-weight: 600;
+	line-height: 1.5;
+}
+
+.header-5 {
+	font-size: 2rem;
+	font-weight: 600;
+	line-height: 1.5;
+}
+
+.subtitle-1 {
+	font-size: 1rem;
+	font-weight: 600;
+	line-height: 1.5;
+}
+
+.subtitle-2 {
+	font-size: 0.875rem;
+	font-weight: 600;
+	line-height: 1.5;
+}
+
+.body-1 {
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+}
+
+.body-2 {
+	font-size: 0.875rem;
+	font-weight: 400;
+	line-height: 1.5;
+}
+
+.tag-small {
+	font-weight: 700;
+	font-size: 0.75rem;
+}
+
+.link {
+	text-decoration: underline;
+	color: var(--black);
+	transition: all 0.2s ease-in-out;
+}
+
+.link:hover {
+	color: var(--white);
+	background-color: var(--main-color);
 }

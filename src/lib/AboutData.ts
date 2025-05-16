@@ -1,4 +1,49 @@
-export const educations = [
+// Types for about data
+export interface Education {
+	school: string;
+	degree: string;
+	startYear: string;
+	endYear: string;
+	location: string;
+	description: string;
+	link: string;
+}
+
+export interface Experience {
+	company: string;
+	role: string;
+	startYear: string;
+	endYear: string;
+	location: string;
+	description: string[];
+	link: string;
+}
+
+export interface Activity {
+	title: string;
+	role: string;
+	role2?: string;
+	startYear: string;
+	endYear: string;
+	startYear2?: string;
+	endYear2?: string;
+	location: string;
+	description: string[];
+	description2?: string[];
+	link?: string;
+}
+
+export interface Award {
+	title: string;
+	presenter: string;
+	presenter2?: string;
+	year: string;
+	description: string[];
+	description2?: string[];
+}
+
+// Export the data with exact same content as AboutData.js
+export const educations: Education[] = [
 	{
 		school: 'Parsons School of Design',
 		degree: 'MFA in Design and Technology',
@@ -19,7 +64,7 @@ export const educations = [
 	}
 ];
 
-export const experiences = [
+export const experiences: Experience[] = [
 	{
 		company: 'Pikurate',
 		role: 'UX/UI Designer (Freelance)',
@@ -59,7 +104,7 @@ export const experiences = [
 	}
 ];
 
-export const activities = [
+export const activities: Activity[] = [
 	{
 		title: 'Raise Uganda Now',
 		role: 'Designer (Voluntary)',
@@ -101,7 +146,7 @@ export const activities = [
 	}
 ];
 
-export const awards = [
+export const awards: Award[] = [
 	{
 		title: 'Award of Excellence',
 		presenter: 'Director, LINC3.0, Kyung Hee University',

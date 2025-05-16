@@ -1,18 +1,7 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
+	import type { Project } from '$lib/types';
 	const dispatch = createEventDispatcher();
-
-	interface Project {
-		title: string;
-		slug: string;
-		thumbnail: string;
-		excerpt: string;
-		tags: string[];
-		date: {
-			year: number;
-			month: number;
-		};
-	}
 
 	export let project: Project;
 </script>

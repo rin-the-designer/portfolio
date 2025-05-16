@@ -1,45 +1,33 @@
 <script lang="ts">
-	interface TitleAreaProps {
-		title: string;
-		slug: string;
-		thumbnail: string;
-		mainImage: string;
-		tags: string;
-		date: {
-			year: number;
-			month: number;
-		};
-		intro: string[];
-		iframe: string;
-	}
+	import type { Archive } from '$lib/types';
 
-	export let item: TitleAreaProps;
+	export let archive: Archive;
 </script>
 
 <div class="title-area">
 	<div class="content-area">
 		<div class="main-image">
-			{#if item.iframe}
-				<iframe src={item.iframe} title={item.title} scrolling="no"></iframe>
+			{#if archive.iframe}
+				<iframe src={archive.iframe} title={archive.title} scrolling="no"></iframe>
 			{:else}
-				<img src={item.mainImage} alt={item.title} />
+				<img src={archive.mainImage} alt={archive.title} />
 			{/if}
 		</div>
 	</div>
 	<div class="metadata">
 		<div class="title">
-			<h1>{item.title}</h1>
+			<h1>{archive.title}</h1>
 		</div>
 		<hr />
 		<span class="item-tags">
-			<a href={`/archive?category=${item.tags}`}>{item.tags}</a>
+			<a href={`/archive?category=${archive.tags}`}>{archive.tags}</a>
 		</span>
 		<hr />
-		<span class="item-date">{item.date.year}/{item.date.month}</span>
+		<span class="item-date"
+			>{archive.date.year}/{archive.date.month.toString().padStart(2, '0')}</span
+		>
 		<hr />
-		{#each item.intro as intro}
-			<p class="item-intro">{intro}</p>
-		{/each}
+		<p class="item-intro">{archive.intro}</p>
 	</div>
 </div>
 
@@ -58,7 +46,7 @@
 
 	.title {
 		background-color: white;
-		padding: 0.5rem;
+		padding: var(--padding-default);
 		height: auto;
 	}
 
@@ -100,7 +88,7 @@
 	.metadata .item-tags,
 	.metadata .item-date,
 	.metadata .item-intro {
-		padding: 0.5rem;
+		padding: var(--padding-small) var(--padding-default);
 	}
 
 	.metadata .item-tags a {

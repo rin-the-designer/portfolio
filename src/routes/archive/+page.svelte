@@ -2,6 +2,8 @@
 	import ArchiveCard from '../../components/ArchiveCard.svelte';
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
+	import type { Archive } from '$lib/types';
+	import type { Category } from '$lib/ArchiveData';
 	let { data } = $props();
 
 	// Function to shuffle array
@@ -15,41 +17,26 @@
 	}
 
 	// Combine and shuffle all items on mount
-	type Item = { title: string; thumbnail: string; mainImage: string; slug: string };
-	let allItems = $state<Item[]>([]);
+	let allItems = $state<Archive[]>([]);
 	onMount(() => {
 		const urlParams = new URLSearchParams(window.location.search);
 		const categoryParam = urlParams.get('category');
-		if (categoryParam && allCategories.includes(categoryParam)) {
+		if (categoryParam && data.categories.includes(categoryParam as Category)) {
 			selectedCategory = categoryParam;
 		}
 
-		allItems = shuffleArray([
-			...data.photographyData,
-			...data.posterData,
-			...data.logoData,
-			...data.codingData
-		]);
+		allItems = shuffleArray(data.archiveItems);
 	});
 
-	// Get unique categories based on the data type
-	let allCategories = ['All', 'Photography', 'Poster', 'Logo', 'Coding'];
+	// Get categories from data
+	let allCategories = ['All', ...data.categories];
 	let selectedCategory = $state('All');
 
 	// Filter items based on selected category
 	let filteredItems = $derived(
 		selectedCategory === 'All'
 			? allItems
-			: allItems.filter((item) => {
-					if (selectedCategory === 'Photography')
-						return data.photographyData.some((p) => p.title === item.title);
-					if (selectedCategory === 'Poster')
-						return data.posterData.some((p) => p.title === item.title);
-					if (selectedCategory === 'Logo') return data.logoData.some((p) => p.title === item.title);
-					if (selectedCategory === 'Coding')
-						return data.codingData.some((p) => p.title === item.title);
-					return false;
-				})
+			: allItems.filter((item) => item.tags.includes(selectedCategory as Category))
 	);
 
 	// Calculate number of columns based on viewport width
@@ -124,6 +111,7 @@
 		width: 100%;
 		padding: 0.875rem 0.5rem;
 		border-bottom: 2px solid var(--black);
+		z-index: 100;
 	}
 
 	.filter-container::-webkit-scrollbar {

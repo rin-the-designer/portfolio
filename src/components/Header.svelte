@@ -52,7 +52,7 @@
 	}
 
 	.header .logo {
-		padding: 0.5rem;
+		padding: var(--padding-small) var(--padding-default);
 		font-weight: 700;
 		transition: color 0.2s ease-in-out;
 	}
@@ -71,7 +71,7 @@
 
 	.header .menu-container {
 		display: flex;
-		gap: 0.5rem;
+		gap: 1rem;
 	}
 
 	.header .menu-container .menu-toggle {
@@ -96,7 +96,7 @@
 	.header .menu {
 		display: flex;
 		gap: 0.5rem;
-		padding-right: 0.5rem;
+		padding-right: var(--padding-default);
 	}
 
 	.header .menu a {

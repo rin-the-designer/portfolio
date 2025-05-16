@@ -1,47 +1,62 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
+	import type { Project } from '$lib/types';
 	const dispatch = createEventDispatcher();
 
-	interface Project {
-		title: string;
-		slug: string;
-		thumbnail: string;
-		excerpt: string;
-		tags: string[];
-	}
-
 	export let project: Project;
+
+	const handleTagClick = (event: MouseEvent, tag: string) => {
+		event.preventDefault(); // Prevent navigation when clicking tag
+		event.stopPropagation();
+		dispatch('tagSelect', tag);
+	};
 </script>
 
-<div class="card">
-	<img src={project.thumbnail} alt="{project.title} Thumbnail" />
+<a href="/projects/{project.slug}" class="card">
+	<div class="image-container">
+		<img src={project.thumbnail} alt="{project.title} Thumbnail" />
+	</div>
 	<div class="card-text">
-		<h1>{project.title}</h1>
+		<h2 class="subtitle-1">{project.title}</h2>
 		<div class="excerpt">
-			<p>{project.excerpt}</p>
+			<p class="body-2">{project.excerpt}</p>
 		</div>
 		<div class="tags">
 			{#each project.tags as tag}
-				<button type="button" class="tag" on:click={() => dispatch('tagSelect', tag)}>
+				<button type="button" class="link tag-small" on:click={(e) => handleTagClick(e, tag)}>
 					{tag}
 				</button>
 			{/each}
 		</div>
 	</div>
-</div>
+</a>
 
 <style>
 	.card {
 		display: flex;
 		flex-direction: column;
 		width: 100%;
+		cursor: pointer;
+		text-decoration: none;
+	}
+
+	.card:hover {
+		img {
+			transform: scale(1.1);
+		}
+	}
+
+	.image-container {
+		width: 100%;
+		aspect-ratio: 1/1;
+		overflow: hidden;
 	}
 
 	.card img {
 		width: 100%;
-		aspect-ratio: 1/1;
+		height: 100%;
 		object-fit: cover;
-		border-bottom: 2px solid var(--black);
+		transition: transform 0.2s ease-in-out;
 	}
 
 	.card-text {
@@ -49,42 +64,13 @@
 		display: flex;
 		flex-direction: column;
 		gap: 0.5rem;
-		padding: 1rem 0.5rem;
-		height: 100%;
-	}
-
-	.card h1 {
-		font-weight: 600;
-		font-size: 1rem;
-	}
-
-	.card p {
-		font-weight: 400;
-		font-size: 0.875rem;
+		padding: var(--padding-default);
 	}
 
 	.tags {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.5rem;
-	}
-
-	.tags .tag {
-		font-weight: 700;
-		text-decoration: underline;
-		font-size: 0.75rem;
-		color: var(--black);
-		transition: all 0.2s ease-in-out;
-		border: none;
-		background: none;
-		padding: 0;
-		cursor: pointer;
-	}
-
-	.tags .tag:hover {
-		background-color: var(--main-color);
-		color: white;
-		cursor: pointer;
 	}
 
 	.excerpt p {

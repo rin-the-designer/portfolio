@@ -4,8 +4,8 @@
 </script>
 
 <AboutList
-	educations={data.educationData}
-	experiences={data.experienceData}
-	activities={data.activitiesData}
-	awards={data.awardsData}
+	educations={data.educations}
+	experiences={data.experiences}
+	activities={data.activities}
+	awards={data.awards}
 />

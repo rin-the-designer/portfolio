@@ -83,12 +83,12 @@
 						{:else}
 							<h3>{education.school}</h3>
 						{/if}
-						<p>{education.location}</p>
-						<p>{education.startYear} - {education.endYear}</p>
+						<p class="body-1">{education.location}</p>
+						<p class="body-1">{education.startYear} - {education.endYear}</p>
 					</div>
 					<div class="category-sub-item">
 						<h3>{education.degree}</h3>
-						<p>{education.description}</p>
+						<p class="body-1">{education.description}</p>
 					</div>
 				</div>
 			{/each}
@@ -105,12 +105,12 @@
 						{:else}
 							<h3>{experience.company}</h3>
 						{/if}
-						<p>{experience.location}</p>
-						<p>{experience.startYear} - {experience.endYear}</p>
+						<p class="body-1">{experience.location}</p>
+						<p class="body-1">{experience.startYear} - {experience.endYear}</p>
 					</div>
 					<div class="category-sub-item">
 						<h3>{experience.role}</h3>
-						<ul>
+						<ul class="body-1">
 							{#each experience.description as description}
 								<li>{description}</li>
 							{/each}
@@ -131,15 +131,15 @@
 						{:else}
 							<h3>{activity.title}</h3>
 						{/if}
-						<p>{activity.location}</p>
-						<p>{activity.startYear} - {activity.endYear}</p>
+						<p class="body-1">{activity.location}</p>
+						<p class="body-1">{activity.startYear} - {activity.endYear}</p>
 						{#if activity.startYear2}
-							<p>{activity.startYear2} - {activity.endYear2}</p>
+							<p class="body-1">{activity.startYear2} - {activity.endYear2}</p>
 						{/if}
 					</div>
 					<div class="category-sub-item">
 						<h3>{activity.role}</h3>
-						<ul>
+						<ul class="body-1">
 							{#each activity.description as description}
 								<li>{description}</li>
 							{/each}
@@ -148,7 +148,7 @@
 							<h3 style="padding-top: 2rem;">{activity.role2}</h3>
 						{/if}
 						{#if activity.description2}
-							<ul>
+							<ul class="body-1">
 								{#each activity.description2 as description2}
 									<li>{description2}</li>
 								{/each}
@@ -166,17 +166,17 @@
 				<div class="category-item">
 					<div class="category-sub-item">
 						<h3>{award.title}</h3>
-						<p>{award.year}</p>
+						<p class="body-1">{award.year}</p>
 					</div>
 					<div class="category-sub-item">
 						<h3>{award.presenter}</h3>
 						{#each award.description as description}
-							<p>{description}</p>
+							<p class="body-1">{description}</p>
 						{/each}
 						{#if award.description2}
 							<h3 style="padding-top: 2rem;">{award.presenter2}</h3>
 							{#each award.description2 as description2}
-								<p>{description2}</p>
+								<p class="body-1">{description2}</p>
 							{/each}
 						{/if}
 					</div>
@@ -193,7 +193,7 @@
 	}
 
 	.about-category {
-		padding: 0.5rem 0 0.5rem 0.5rem;
+		padding: var(--padding-small) 0 var(--padding-small) var(--padding-default);
 		display: flex;
 		flex-direction: row;
 		gap: 1rem;

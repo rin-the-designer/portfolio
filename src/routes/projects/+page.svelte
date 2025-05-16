@@ -5,13 +5,13 @@
 	let { data } = $props();
 
 	// Get unique tags from all projects
-	let allTags = ['All', ...new Set(data.summaries.flatMap((project) => project.tags))];
+	let allTags = ['All', ...new Set(data.projects.flatMap((project) => project.tags))];
 	let selectedTag = $state('All');
 	// Filter projects based on selected tag
 	let filteredProjects = $derived(
 		selectedTag === 'All'
-			? data.summaries
-			: data.summaries.filter((project) => project.tags.includes(selectedTag))
+			? data.projects
+			: data.projects.filter((project) => project.tags.includes(selectedTag))
 	);
 
 	// Calculate number of columns based on viewport width
@@ -83,9 +83,10 @@
 		top: 3rem;
 		background-color: white;
 		width: 100%;
-		padding: 0.875rem 0.5rem;
+		padding: 0.875rem var(--padding-default);
 		border-bottom: 2px solid var(--black);
 		gap: 1rem;
+		z-index: 100;
 	}
 
 	.filters {

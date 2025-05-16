@@ -1,10 +1,36 @@
-export const photographies = [
+import type { Archive } from './types';
+
+// Define categories as constants for type safety and reuse
+export const CATEGORIES = {
+	PHOTOGRAPHY: 'Photography',
+	POSTER: 'Poster',
+	LOGO: 'Logo',
+	CODING: 'Coding'
+} as const;
+
+export type Category = (typeof CATEGORIES)[keyof typeof CATEGORIES];
+
+// Raw data type (before transformation)
+type RawArchiveItem = Omit<Archive, 'tags' | 'intro'> & {
+	intro: string | string[];
+};
+
+// Helper function to transform raw data into Archive format
+function createArchiveItem(item: RawArchiveItem, category: Category): Archive {
+	return {
+		...item,
+		tags: [category],
+		intro: Array.isArray(item.intro) ? item.intro.join(' ') : item.intro
+	};
+}
+
+// Raw data arrays
+const photographies: RawArchiveItem[] = [
 	{
 		title: 'Nice, FR 🇫🇷',
 		slug: 'photographies/nice-fr',
 		thumbnail: '/img/archive/photographies/nice-fr/thumbnail.png',
 		mainImage: '/img/archive/photographies/nice-fr/main.jpg',
-		tags: 'Photography',
 		date: {
 			year: 2019,
 			month: 7
@@ -16,7 +42,6 @@ export const photographies = [
 		slug: 'photographies/inje-kr',
 		thumbnail: '/img/archive/photographies/inje-kr/thumbnail.png',
 		mainImage: '/img/archive/photographies/inje-kr/main.jpg',
-		tags: 'Photography',
 		date: {
 			year: 2019,
 			month: 1
@@ -25,13 +50,12 @@ export const photographies = [
 	}
 ];
 
-export const posters = [
+const posters: RawArchiveItem[] = [
 	{
 		title: 'LG AI Hackathon 4',
 		slug: 'posters/lg-ai-hackathon-4',
 		thumbnail: '/img/archive/posters/lg-ai-hackathon-4/thumbnail.png',
 		mainImage: '/img/archive/posters/lg-ai-hackathon-4/main.png',
-		tags: 'Poster',
 		date: {
 			year: 2021,
 			month: 6
@@ -43,7 +67,6 @@ export const posters = [
 		slug: 'posters/lg-ai-hackathon-2',
 		thumbnail: '/img/archive/posters/lg-ai-hackathon-2/thumbnail.png',
 		mainImage: '/img/archive/posters/lg-ai-hackathon-2/main.png',
-		tags: 'Poster',
 		date: {
 			year: 2020,
 			month: 9
@@ -55,7 +78,6 @@ export const posters = [
 		slug: 'posters/mlit-hackathon',
 		thumbnail: '/img/archive/posters/mlit-hackathon/thumbnail.png',
 		mainImage: '/img/archive/posters/mlit-hackathon/main.png',
-		tags: 'Poster',
 		date: {
 			year: 2020,
 			month: 8
@@ -69,7 +91,6 @@ export const posters = [
 		slug: 'posters/dankook-ai-competition',
 		thumbnail: '/img/archive/posters/dankook-ai-competition/thumbnail.png',
 		mainImage: '/img/archive/posters/dankook-ai-competition/main.png',
-		tags: 'Poster',
 		date: {
 			year: 2020,
 			month: 8
@@ -83,7 +104,6 @@ export const posters = [
 		slug: 'posters/kt-ai-hackathon',
 		thumbnail: '/img/archive/posters/kt-ai-hackathon/thumbnail.png',
 		mainImage: '/img/archive/posters/kt-ai-hackathon/main.png',
-		tags: 'Poster',
 		date: {
 			year: 2020,
 			month: 8
@@ -97,7 +117,6 @@ export const posters = [
 		slug: 'posters/nis-haicon',
 		thumbnail: '/img/archive/posters/nis-haicon/thumbnail.png',
 		mainImage: '/img/archive/posters/nis-haicon/main.png',
-		tags: 'Poster',
 		date: {
 			year: 2020,
 			month: 8
@@ -111,7 +130,6 @@ export const posters = [
 		slug: 'posters/jeju-big-data',
 		thumbnail: '/img/archive/posters/jeju-big-data/thumbnail.png',
 		mainImage: '/img/archive/posters/jeju-big-data/main.png',
-		tags: 'Poster',
 		date: {
 			year: 2020,
 			month: 6
@@ -125,7 +143,6 @@ export const posters = [
 		slug: 'posters/run-2020',
 		thumbnail: '/img/archive/posters/run-2020/thumbnail.png',
 		mainImage: '/img/archive/posters/run-2020/main.png',
-		tags: 'Poster',
 		date: {
 			year: 2020,
 			month: 2
@@ -139,7 +156,6 @@ export const posters = [
 		slug: 'posters/kfldd',
 		thumbnail: '/img/archive/posters/kfldd/thumbnail.png',
 		mainImage: '/img/archive/posters/kfldd/main.png',
-		tags: 'Poster',
 		date: {
 			year: 2019,
 			month: 11
@@ -153,7 +169,6 @@ export const posters = [
 		slug: 'posters/run-2018',
 		thumbnail: '/img/archive/posters/run-2018/thumbnail.png',
 		mainImage: '/img/archive/posters/run-2018/main.png',
-		tags: 'Poster',
 		date: {
 			year: 2018,
 			month: 7
@@ -164,13 +179,12 @@ export const posters = [
 	}
 ];
 
-export const logos = [
+const logos: RawArchiveItem[] = [
 	{
 		title: 'insight360',
 		slug: 'logos/insight360',
 		thumbnail: '/img/archive/logos/insight360/thumbnail.png',
 		mainImage: '/img/archive/logos/insight360/main.png',
-		tags: 'Logo',
 		date: {
 			year: 2021,
 			month: 11
@@ -182,7 +196,6 @@ export const logos = [
 		slug: 'logos/hue-counseling',
 		thumbnail: '/img/archive/logos/hue-counseling/thumbnail.png',
 		mainImage: '/img/archive/logos/hue-counseling/main.png',
-		tags: 'Logo',
 		date: {
 			year: 2020,
 			month: 1
@@ -191,13 +204,12 @@ export const logos = [
 	}
 ];
 
-export const coding = [
+const coding: RawArchiveItem[] = [
 	{
 		title: "Amy's Umbrella",
 		slug: 'codings/amys-umbrella',
 		thumbnail: '/img/archive/codings/amys-umbrella/thumbnail.png',
 		mainImage: '/img/archive/codings/amys-umbrella/main.png',
-		tags: 'Coding',
 		date: {
 			year: 2024,
 			month: 9
@@ -213,7 +225,6 @@ export const coding = [
 		slug: 'codings/personal-space',
 		thumbnail: '/img/archive/codings/personal-space/thumbnail.png',
 		mainImage: '/img/archive/codings/personal-space/main.png',
-		tags: 'Coding',
 		date: {
 			year: 2024,
 			month: 9
@@ -229,7 +240,6 @@ export const coding = [
 		slug: 'codings/time-in-alcohol-bottles',
 		thumbnail: '/img/archive/codings/time-in-alcohol-bottles/thumbnail.png',
 		mainImage: '/img/archive/codings/time-in-alcohol-bottles/main.png',
-		tags: 'Coding',
 		date: {
 			year: 2024,
 			month: 9
@@ -245,7 +255,6 @@ export const coding = [
 		slug: 'codings/optical-illusion',
 		thumbnail: '/img/archive/codings/optical-illusion/thumbnail.png',
 		mainImage: '/img/archive/codings/optical-illusion/main.png',
-		tags: 'Coding',
 		date: {
 			year: 2024,
 			month: 10
@@ -261,7 +270,6 @@ export const coding = [
 		slug: 'codings/data-encryption',
 		thumbnail: '/img/archive/codings/data-encryption/thumbnail.png',
 		mainImage: '/img/archive/codings/data-encryption/main.png',
-		tags: 'Coding',
 		date: {
 			year: 2024,
 			month: 10
@@ -277,7 +285,6 @@ export const coding = [
 		slug: 'codings/adventure-of-rin',
 		thumbnail: '/img/archive/codings/adventure-of-rin/thumbnail.png',
 		mainImage: '/img/archive/codings/adventure-of-rin/main.png',
-		tags: 'Coding',
 		date: {
 			year: 2024,
 			month: 10
@@ -289,3 +296,19 @@ export const coding = [
 		iframe: 'https://cc.rinchong.kim/autobiographical-game/index.html'
 	}
 ];
+
+// Export a single array of all archive items
+export const archiveItems: Archive[] = [
+	...photographies.map((item) => createArchiveItem(item, CATEGORIES.PHOTOGRAPHY)),
+	...posters.map((item) => createArchiveItem(item, CATEGORIES.POSTER)),
+	...logos.map((item) => createArchiveItem(item, CATEGORIES.LOGO)),
+	...coding.map((item) => createArchiveItem(item, CATEGORIES.CODING))
+];
+
+// Export a function to get items by category
+export function getItemsByCategory(category: Category): Archive[] {
+	return archiveItems.filter((item) => item.tags.includes(category));
+}
+
+// Export all categories as an array
+export const categories: Category[] = Object.values(CATEGORIES);
