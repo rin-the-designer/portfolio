@@ -1,15 +1,9 @@
 <script lang="ts">
-	import { projects } from '$lib/ProjectData';
-	import type { Project } from '$lib/types';
-
-	const project = projects.find((p) => p.slug === 'career-dive');
-
-	if (!project) {
-		throw new Error('Project not found');
-	}
+	let { data } = $props<{ data: { project: any } }>();
+	const { project } = data;
 </script>
 
-<div class="project-content">
+<div class="project-content color-{project.slug}">
 	<main>
 		<section class="section">
 			<h2>Overview</h2>
@@ -35,9 +29,9 @@
 		padding: 2rem 0;
 	}
 
-	:global(.project-content ::selection) {
-		background-color: var(--accent-color);
-		color: var(--black);
+	:global(.color-career-dive ::selection) {
+		background-color: #698cff !important;
+		color: var(--white) !important;
 	}
 
 	.section {

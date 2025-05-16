@@ -1,4 +1,4 @@
-import { archiveItems, categories } from '$lib/ArchiveData';
+import { archiveItems, categories } from '$lib/data/ArchiveData';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = () => {

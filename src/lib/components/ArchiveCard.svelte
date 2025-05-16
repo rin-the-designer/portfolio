@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Archive } from '$lib/types';
+	import type { Archive } from '$lib/data/types';
 
 	export let item: Archive;
 </script>

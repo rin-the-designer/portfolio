@@ -1,4 +1,4 @@
-import { projects, tags } from '$lib/ProjectData';
+import { projects, tags } from '$lib/data/ProjectData';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = () => {

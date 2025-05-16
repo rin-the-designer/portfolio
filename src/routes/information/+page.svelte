@@ -1,5 +1,5 @@
 <script lang="ts">
-	import AboutList from '../../components/AboutList.svelte';
+	import AboutList from '$lib/components/AboutList.svelte';
 	let { data } = $props();
 </script>
 

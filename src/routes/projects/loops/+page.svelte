@@ -1,16 +1,10 @@
 <script lang="ts">
-	import { projects } from '$lib/ProjectData';
-	import type { Project } from '$lib/types';
-
-	const project = projects.find((p) => p.slug === 'loops');
-
-	if (!project) {
-		throw new Error('Project not found');
-	}
+	let { data } = $props<{ data: { project: any } }>();
+	const { project } = data;
 </script>
 
-<div class="project-loops">
-	<main class="project-content">
+<div class="project-content color-{project.slug}">
+	<main>
 		<section class="section">
 			<h2>Overview</h2>
 			<p>{project.intro}</p>
@@ -18,29 +12,26 @@
 
 		<section class="section">
 			<h2>Process</h2>
-			<!-- Your process content -->
+			<!-- Add project-specific process content here -->
 		</section>
 
 		<section class="section">
 			<h2>Outcome</h2>
-			<!-- Your outcome content -->
+			<!-- Add project-specific outcome content here -->
 		</section>
 	</main>
 </div>
 
 <style>
-	.project-loops {
+	.project-content {
 		display: flex;
 		flex-direction: column;
-	}
-
-	:global(.project-loops ::selection) {
-		background-color: #ff8800;
-		color: var(--black);
-	}
-
-	.project-content {
 		padding: 2rem 0;
+	}
+
+	:global(.color-loops ::selection) {
+		background-color: #ff8800 !important;
+		color: var(--black) !important;
 	}
 
 	.section {

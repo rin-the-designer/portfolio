@@ -1,4 +1,4 @@
-import { archiveItems, CATEGORIES } from '$lib/ArchiveData';
+import { archiveItems, CATEGORIES } from '$lib/data/ArchiveData';
 import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 

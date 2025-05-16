@@ -1,10 +1,10 @@
 <script lang="ts">
-	import type { Project } from '$lib/types';
+	import type { Project } from '$lib/data/types';
 
 	export let project: Project;
 </script>
 
-<div class="header-content">
+<div class="header-content color-{project.slug}">
 	<div class="header-image">
 		<img src={project.coverimg} alt="{project.title} thumbnail" />
 	</div>

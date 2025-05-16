@@ -1,9 +1,9 @@
 <script lang="ts">
-	import ArchiveCard from '../../components/ArchiveCard.svelte';
+	import ArchiveCard from '$lib/components/ArchiveCard.svelte';
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
-	import type { Archive } from '$lib/types';
-	import type { Category } from '$lib/ArchiveData';
+	import type { Archive } from '$lib/data/types.js';
+	import type { Category } from '$lib/data/ArchiveData';
 	let { data } = $props();
 
 	// Function to shuffle array

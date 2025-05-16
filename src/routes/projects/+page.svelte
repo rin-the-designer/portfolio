@@ -1,6 +1,6 @@
 <script>
-	import ProjectCard from '../../components/ProjectCard.svelte';
-	import ProjectList from '../../components/ProjectList.svelte';
+	import ProjectCard from '$lib/components/ProjectCard.svelte';
+	import ProjectList from '$lib/components/ProjectList.svelte';
 	import { onMount } from 'svelte';
 	let { data } = $props();
 
