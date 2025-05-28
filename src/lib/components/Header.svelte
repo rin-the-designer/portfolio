@@ -49,6 +49,7 @@
 		top: 0;
 		z-index: 100;
 		gap: 1rem;
+		color: var(--black);
 	}
 
 	.header .logo {

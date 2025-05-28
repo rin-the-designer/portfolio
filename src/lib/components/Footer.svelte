@@ -68,6 +68,7 @@
 		display: flex;
 		flex-direction: row;
 		border-top: 2px solid var(--black);
+		color: var(--black);
 	}
 
 	.footer-1 {
@@ -95,7 +96,6 @@
 		width: fit-content;
 		font-size: 2rem;
 		text-decoration: underline;
-		color: var(--black);
 		transition: all 0.2s ease-in-out;
 	}
 

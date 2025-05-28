@@ -17,13 +17,13 @@
 		<img src={project.thumbnail} alt="{project.title} Thumbnail" />
 	</div>
 	<div class="card-text">
-		<h2 class="subtitle-1">{project.title}</h2>
+		<h2 class="subtitle-1 semibold">{project.title}</h2>
 		<div class="excerpt">
 			<p class="body-2">{project.excerpt}</p>
 		</div>
 		<div class="tags">
 			{#each project.tags as tag}
-				<button type="button" class="link tag-small" on:click={(e) => handleTagClick(e, tag)}>
+				<button type="button" class="link tag-small bold" on:click={(e) => handleTagClick(e, tag)}>
 					{tag}
 				</button>
 			{/each}
@@ -38,6 +38,7 @@
 		width: 100%;
 		cursor: pointer;
 		text-decoration: none;
+		color: var(--black);
 	}
 
 	.card:hover {
@@ -65,12 +66,6 @@
 		flex-direction: column;
 		gap: 0.5rem;
 		padding: var(--padding-default);
-	}
-
-	.tags {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.5rem;
 	}
 
 	.excerpt p {

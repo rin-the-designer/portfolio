@@ -1,3 +1,16 @@
+export interface TeamMember {
+	name: string;
+	role?: string;
+	portfolio?: string;
+}
+
+export interface CompanyInfo {
+	name: string;
+	link?: string;
+}
+
+export type ProjectType = 'Work' | 'Team' | 'Individual';
+
 export interface Project {
 	title: string;
 	slug: string;
@@ -9,9 +22,12 @@ export interface Project {
 		year: number;
 		month: number;
 	};
-	role: string;
-	tools: string;
+	roles?: string[];
+	tools: string[];
 	intro: string;
+	projectType: ProjectType;
+	team?: TeamMember[];
+	company?: CompanyInfo;
 }
 
 export interface Archive {

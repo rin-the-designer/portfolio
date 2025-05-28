@@ -1,5 +1,5 @@
 <script lang="ts">
-	import TitleArea from '$lib/components/ArchiveTitleArea.svelte';
+	import ArchiveOverview from '$lib/components/ArchiveOverview.svelte';
 	import type { PageData } from './$types';
 	import type { Archive } from '$lib/data/types';
 
@@ -10,4 +10,4 @@
 	$: ({ item } = data);
 </script>
 
-<TitleArea archive={item} />
+<ArchiveOverview archive={item} />

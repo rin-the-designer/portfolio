@@ -21,13 +21,15 @@
 	onMount(() => {
 		const updateColumns = () => {
 			columns =
-				window.innerWidth >= 1024
-					? 4
-					: window.innerWidth >= 768
-						? 3
-						: window.innerWidth >= 480
-							? 2
-							: 1;
+				window.innerWidth >= 1920
+					? 5
+					: window.innerWidth >= 1024
+						? 4
+						: window.innerWidth >= 768
+							? 3
+							: window.innerWidth >= 480
+								? 2
+								: 1;
 		};
 
 		updateColumns();
@@ -151,6 +153,12 @@
 	@media (min-width: 1024px) {
 		.card-container {
 			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+
+	@media (min-width: 1920px) {
+		.card-container {
+			grid-template-columns: repeat(5, 1fr);
 		}
 	}
 

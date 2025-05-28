@@ -3,6 +3,11 @@ import type { Project } from './types';
 // Raw data type (before transformation)
 type RawProject = Omit<Project, 'tags'> & {
 	tags: string[];
+	projectType: string;
+	team?: { name: string; role?: string; portfolio?: string }[];
+	company?: { name: string; link?: string };
+	roles?: string[];
+	tools: string[];
 };
 
 // Helper function to transform raw data into Project format
@@ -26,10 +31,11 @@ const rawProjects: RawProject[] = [
 			year: 2025,
 			month: 5
 		},
-		role: 'Design & Development',
-		tools: 'SvelteKit, JavaScript',
+		roles: ['Design & Development'],
+		tools: ['SvelteKit', 'JavaScript'],
+		projectType: 'Individual',
 		intro:
-			"Pick & Play is a vinyl collector's community, offering a platform to buy and sell used vinyl, exchange information about analog music, and consume curated content. Unlike the United States, which maintained a robust community of vinyl enthusiasts even during the decline of analog music, South Korea lacked such space. Thus, Pick & Play addresses the unique challenges faced by young generation Korean vinyl collectors."
+			'The Loops is a collection of digital artworks that explore the cycles and repetitions woven into everyday life. These works visualize the tension between involuntary loops, patterns we find ourselves caught in, and the chosen thresholds where we assert meaning and agency.'
 	},
 	{
 		title: 'Pick and Play',
@@ -38,12 +44,13 @@ const rawProjects: RawProject[] = [
 		coverimg: '/img/projects/pick-and-play/cover.png',
 		excerpt: "Vinyl collectors' platform",
 		tags: ['UI/UX', 'Branding'],
-		role: 'NA',
-		tools: 'NA',
+		roles: ['Design Lead'],
+		tools: ['Figma', 'ProtoPie'],
 		date: {
 			year: 2022,
 			month: 10
 		},
+		projectType: 'Individual',
 		intro:
 			"Pick & Play is a vinyl collector's community, offering a platform to buy and sell used vinyl, exchange information about analog music, and consume curated content. Unlike the United States, which maintained a robust community of vinyl enthusiasts even during the decline of analog music, South Korea lacked such space. Thus, Pick & Play addresses the unique challenges faced by young generation Korean vinyl collectors."
 	},
@@ -58,8 +65,14 @@ const rawProjects: RawProject[] = [
 			year: 2022,
 			month: 10
 		},
-		role: 'NA',
-		tools: 'NA',
+		roles: ['Design Lead'],
+		tools: ['Figma'],
+		projectType: 'Team',
+		team: [
+			{
+				name: 'Su-hyeon Park'
+			}
+		],
 		intro:
 			'Career Dive is a service created for the purpose of exchanging career information. We provide a real-time voice-based mentoring service by matching job seekers who are having difficulty collecting employment information with current employees who want to work on the side.'
 	},
@@ -74,8 +87,13 @@ const rawProjects: RawProject[] = [
 			year: 2021,
 			month: 6
 		},
-		role: 'NA',
-		tools: 'NA',
+		roles: ['UI Designer'],
+		tools: ['Figma'],
+		projectType: 'Work',
+		company: {
+			name: 'Dacon',
+			link: 'https://dacon.io'
+		},
 		intro:
 			'Dacon is an online data science competition platform in Korea. Users join to participate in challenges sponsored or requested by Korean government or companies.'
 	},
@@ -90,8 +108,25 @@ const rawProjects: RawProject[] = [
 			year: 2023,
 			month: 10
 		},
-		role: 'NA',
-		tools: 'NA',
+		roles: ['Web Design', 'Branding', 'Photography'],
+		tools: ['Figma', 'WordPress', 'Lightroom'],
+		projectType: 'Team',
+		team: [
+			{
+				name: 'Kyungsoo Kim'
+			},
+			{
+				name: 'Insu Jeong',
+				portfolio: 'https://www.instagram.com/insoo.gfx/'
+			},
+			{
+				name: 'Jaehoon Cho',
+				portfolio: 'https://chojh.kr'
+			},
+			{
+				name: 'Hyeonhye Park'
+			}
+		],
 		intro: `Based in Hwanghak-dong, Seoul, Hwanghak Casual is a local workwear brand designed to revitalize the neighborhood once recognized for its craftmanship. The brand symbolizes Hwanghak-dong with a "Yellow Crane" and embodies the roughness of crafting. With the slogan "Work Casually, Wear Crafty", Hwanghak Casual targets not only traditional craftmen, but also those who craft their ways through everyday work.`
 	},
 	{
@@ -105,8 +140,24 @@ const rawProjects: RawProject[] = [
 			year: 2022,
 			month: 12
 		},
-		role: 'NA',
-		tools: 'NA',
+		roles: ['Team Lead'],
+		tools: ['Figma', 'Illustrator'],
+		projectType: 'Team',
+		team: [
+			{
+				name: 'Jaehoon Cho',
+				portfolio: 'https://chojh.kr'
+			},
+			{
+				name: 'Sunghyun Park'
+			},
+			{
+				name: 'Yujin Heo'
+			},
+			{
+				name: 'Haixin Zhang'
+			}
+		],
 		intro:
 			'Through an in-class project conducted on the topic of service planning for adults in their 30s to 40s, we proposed a child care service, dolbomgil, for parents of elementary school children.'
 	},
@@ -121,8 +172,20 @@ const rawProjects: RawProject[] = [
 			year: 2022,
 			month: 12
 		},
-		role: 'NA',
-		tools: 'NA',
+		roles: ['Team Lead'],
+		tools: ['Figma'],
+		projectType: 'Team',
+		team: [
+			{
+				name: 'Ji-hyeon Kim'
+			},
+			{
+				name: 'Su-hyeon Park'
+			},
+			{
+				name: 'Yeon-su Lee'
+			}
+		],
 		intro:
 			'MOCA is a café discovery platform that helps users find cafes offering gluten-free and lactose-free options. The service aims to make dining out easier for people with dietary restrictions by providing detailed menu information and verified reviews from the community.'
 	},
@@ -137,8 +200,20 @@ const rawProjects: RawProject[] = [
 			year: 2022,
 			month: 4
 		},
-		role: 'NA',
-		tools: 'NA',
+		roles: ['Design Lead'],
+		tools: ['Figma'],
+		projectType: 'Team',
+		team: [
+			{
+				name: 'Ji-hyeon Kim'
+			},
+			{
+				name: 'Su-hyeon Park'
+			},
+			{
+				name: 'Yeon-su Lee'
+			}
+		],
 		intro:
 			'Through an in-class project conducted on the topic of service planning for adults in their 30s to 40s, we proposed a child care service, dolbomgil, for parents of elementary school children.'
 	},
@@ -153,8 +228,13 @@ const rawProjects: RawProject[] = [
 			year: 2020,
 			month: 8
 		},
-		role: 'NA',
-		tools: 'NA',
+		roles: ['Freelance Designer'],
+		tools: ['Figma', 'Illustrator'],
+		projectType: 'Work',
+		company: {
+			name: 'Dreamers',
+			link: 'https://dreamers-coop.co.kr'
+		},
 		intro:
 			'Dreamers is a social cooperative in South Korea that offers counseling in areas such as employment, career guidance, and emotional well-being. Based in Suwon, Gyeonggi-do, they host various programs for self-discovery and community engagement.'
 	},
@@ -169,8 +249,8 @@ const rawProjects: RawProject[] = [
 			year: 2021,
 			month: 12
 		},
-		role: 'NA',
-		tools: 'NA',
+		tools: ['InDesign'],
+		projectType: 'Individual',
 		intro:
 			'This book covers the legacy of the French fashion designer, Yves Saint Laurent. All contents of this book were retrieved from the official Musée Yves Saint Laurent website. Please visit https://museeyslparis.com/ for the original text and images.'
 	},
@@ -185,8 +265,8 @@ const rawProjects: RawProject[] = [
 			year: 2021,
 			month: 10
 		},
-		role: 'NA',
-		tools: 'NA',
+		tools: ['InDesign', 'Photoshop'],
+		projectType: 'Individual',
 		intro: `'A Week of Vinyl Records' was a part of an in-class project of Editorial Design 2 course. The project was carried out under a designated topic of 'archiving a week' and a limited theme color of CMYK.`
 	},
 	{
@@ -200,8 +280,8 @@ const rawProjects: RawProject[] = [
 			year: 2021,
 			month: 6
 		},
-		role: 'NA',
-		tools: 'NA',
+		tools: ['Illustrator'],
+		projectType: 'Individual',
 		intro:
 			'This poster is a concept poster for the 100th anniversary of the Bauhaus school. This poster and main visual were created under the premise of a Bauhaus 100th anniversary exhibition being held in Seoul.'
 	},
@@ -216,8 +296,8 @@ const rawProjects: RawProject[] = [
 			year: 2021,
 			month: 6
 		},
-		role: 'NA',
-		tools: 'NA',
+		tools: ['InDesign'],
+		projectType: 'Individual',
 		intro: `The connection between 'THEN' and 'NOW'. THENOW is a concept lifestyle magazine that compares design from the past and design of today.`
 	},
 	{
@@ -231,8 +311,8 @@ const rawProjects: RawProject[] = [
 			year: 2021,
 			month: 6
 		},
-		role: 'NA',
-		tools: 'NA',
+		tools: ['Illustrator'],
+		projectType: 'Individual',
 		intro:
 			'Teasign is a concept tea brand designed with the patterns of each material. The brand name is derived from the word "tea" and "design".'
 	}

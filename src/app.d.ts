@@ -8,6 +8,12 @@ declare global {
 		// interface PageState {}
 		// interface Platform {}
 	}
+
+	// Declare jQuery globally
+	interface Window {
+		jQuery: typeof import('jquery');
+		$: typeof import('jquery');
+	}
 }
 
 export {};
