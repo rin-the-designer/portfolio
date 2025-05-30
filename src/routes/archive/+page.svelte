@@ -139,7 +139,7 @@
 	.archive-container {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
-		gap: 2px;
+		gap: 1px;
 		background-color: var(--black);
 	}
 

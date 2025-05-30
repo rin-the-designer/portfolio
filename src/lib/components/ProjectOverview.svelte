@@ -9,21 +9,21 @@
 		<div class="image">
 			<img src={project.coverimg} alt="{project.title} thumbnail" />
 		</div>
-		<div class="container-element border-bottom padding-default">
+		<div class="container-element border-bottom-1 padding-default">
 			<h1 class="header-4 semibold">{project.title}</h1>
 			<div class="date body-1">
 				{project.date.year}/{project.date.month.toString().padStart(2, '0')}
 			</div>
 			<div class="tags">
 				{#each project.tags as tag}
-					<span class="tag tag-large semibold link">{tag}</span>
+					<a href={`/projects?category=${tag}`} class="tag tag-large semibold link">{tag}</a>
 				{/each}
 			</div>
 		</div>
-		<div class="data">
-			<div class="container-element border-bottom">
+		<div class="grid-col-2 border-bottom-1">
+			<div class="container-element">
 				{#if project.projectType === 'Individual'}
-					<div class="metadata grid-2">
+					<div class="metadata grid-col-2">
 						<div class="container-element padding-default">
 							<p class="subtitle-1 semibold">Project Type</p>
 							<div class="project-type body-1">{project.projectType}</div>
@@ -38,7 +38,7 @@
 						</div>
 					</div>
 				{:else if project.projectType === 'Team'}
-					<div class="metadata grid-4">
+					<div class="metadata grid-col-4">
 						<div class="container-element padding-default">
 							<p class="subtitle-1 semibold">Project Type</p>
 							<div class="project-type body-1">{project.projectType}</div>
@@ -84,7 +84,7 @@
 						</div>
 					</div>
 				{:else if project.projectType === 'Work'}
-					<div class="metadata grid-4">
+					<div class="metadata grid-col-4">
 						<div class="container-element padding-default">
 							<p class="subtitle-1 semibold">Project Type</p>
 							<div class="project-type body-1">{project.projectType}</div>
@@ -125,7 +125,7 @@
 					</div>
 				{/if}
 			</div>
-			<div class="container-element padding-default border-bottom">
+			<div class="container-element padding-default">
 				<div class="subtitle-1 semibold">Overview</div>
 				<p class="body-1">{project.intro}</p>
 			</div>
@@ -153,72 +153,9 @@
 		object-fit: cover;
 	}
 
-	.container-element {
-		display: flex;
-		flex-direction: column;
-		gap: 0.5rem;
-		background-color: var(--white);
-		width: 100%;
-		height: 100%;
-	}
-
 	.container-metadata {
 		display: flex;
 		flex-direction: column;
 		align-self: flex-start;
-	}
-
-	.overview .data {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 2px;
-		align-items: center;
-		background-color: var(--black);
-	}
-
-	.metadata {
-		display: grid;
-		gap: 2px;
-		background-color: var(--black);
-		height: 100%;
-	}
-
-	.grid-2 {
-		grid-template-columns: 1fr 1fr;
-	}
-
-	.grid-4 {
-		grid-template-columns: 1fr 1fr 1fr 1fr;
-	}
-
-	@media (max-width: 1024px) {
-		.grid-4 {
-			grid-template-columns: 1fr 1fr;
-			grid-template-rows: 1fr 1fr;
-		}
-	}
-
-	/* .metadata .member-role {
-		color: var(--gray-600);
-	} */
-
-	@media (max-width: 768px) {
-		.header-content {
-			flex-direction: column;
-		}
-
-		.header-image {
-			width: 100%;
-		}
-
-		h1 {
-			font-size: 2rem;
-		}
-
-		.overview .data {
-			grid-template-columns: 1fr;
-			grid-template-rows: 1fr 1fr;
-			gap: 0;
-		}
 	}
 </style>

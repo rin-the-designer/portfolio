@@ -1,12 +1,16 @@
-<script>
+<script lang="ts">
 	import ProjectCard from '$lib/components/ProjectCard.svelte';
 	import ProjectList from '$lib/components/ProjectList.svelte';
 	import { onMount } from 'svelte';
+	import { goto } from '$app/navigation';
 	let { data } = $props();
 
 	// Get unique tags from all projects
 	let allTags = ['All', ...new Set(data.projects.flatMap((project) => project.tags))];
+
+	// Initialize selectedTag from URL parameter or default to 'All'
 	let selectedTag = $state('All');
+
 	// Filter projects based on selected tag
 	let filteredProjects = $derived(
 		selectedTag === 'All'
@@ -19,6 +23,13 @@
 
 	// Move window check to onMount
 	onMount(() => {
+		// Read URL parameter and set initial filter
+		const urlParams = new URLSearchParams(window.location.search);
+		const categoryParam = urlParams.get('category');
+		if (categoryParam && allTags.includes(categoryParam)) {
+			selectedTag = categoryParam;
+		}
+
 		const updateColumns = () => {
 			columns =
 				window.innerWidth >= 1920
@@ -44,6 +55,18 @@
 	});
 
 	let isCardView = $state(true);
+
+	// Function to update filter and URL
+	async function updateFilter(tag: string) {
+		selectedTag = tag;
+		const url = new URL(window.location.href);
+		if (tag === 'All') {
+			url.searchParams.delete('category');
+		} else {
+			url.searchParams.set('category', tag);
+		}
+		await goto(url.toString(), { replaceState: true });
+	}
 </script>
 
 <div class="filter-container">
@@ -52,7 +75,7 @@
 			<button
 				class="filter-tag"
 				class:active={selectedTag === tag}
-				onclick={() => (selectedTag = tag)}
+				onclick={() => updateFilter(tag)}
 			>
 				{tag}
 			</button>
@@ -66,9 +89,9 @@
 <div class={isCardView ? 'card-container' : 'list-container'}>
 	{#each filteredProjects as project (project.slug)}
 		{#if isCardView}
-			<ProjectCard {project} on:tagSelect={(event) => (selectedTag = event.detail)} />
+			<ProjectCard {project} on:tagSelect={(event) => updateFilter(event.detail)} />
 		{:else}
-			<ProjectList {project} on:tagSelect={(event) => (selectedTag = event.detail)} />
+			<ProjectList {project} on:tagSelect={(event) => updateFilter(event.detail)} />
 		{/if}
 	{/each}
 	{#if isCardView && emptyCards() > 0}
@@ -131,7 +154,7 @@
 	.card-container {
 		display: grid;
 		grid-template-columns: repeat(1, 1fr);
-		gap: 2px;
+		gap: 1px;
 		background-color: var(--black);
 	}
 

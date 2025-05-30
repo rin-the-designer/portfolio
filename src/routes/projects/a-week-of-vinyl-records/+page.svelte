@@ -15,24 +15,49 @@
 	});
 </script>
 
-<div class="project-content color-{project.slug}">
+<div class="project project-content color-{project.slug}">
 	<main>
-		<div class="book-preview">
-			<div id="flipbook"></div>
-		</div>
-		<section class="section">
-			<h2>Overview</h2>
-			<p>{project.intro}</p>
+		<section>
+			<div class="grid-col-2 border-bottom-1">
+				<figure class="container-element padding-default">
+					<img
+						src="/img/projects/a-week-of-vinyl-records/awov-01.png"
+						alt="Front and back cover of A Week of Vinyl Records"
+					/>
+					<figcaption class="body-3">Front and back cover</figcaption>
+				</figure>
+				<figure class="container-element padding-default">
+					<img
+						src="/img/projects/a-week-of-vinyl-records/awov-02.png"
+						alt="Inner cover spread of A Week of Vinyl Records"
+					/>
+					<figcaption class="body-3">Inner cover spread</figcaption>
+				</figure>
+			</div>
+			<div class="grid-col-2 border-bottom-1">
+				<figure class="container-element padding-default">
+					<img
+						src="/img/projects/a-week-of-vinyl-records/awov-03.png"
+						alt="Inner spread, pages 12 and 13, of A Week of Vinyl Records"
+					/>
+					<figcaption class="body-3">Inner spread (p12-p13)</figcaption>
+				</figure>
+				<figure class="container-element padding-default">
+					<img
+						src="/img/projects/a-week-of-vinyl-records/awov-04.png"
+						alt="Inner spread, pages 14 and 15, of A Week of Vinyl Records"
+					/>
+					<figcaption class="body-3">Inner spread (p14-p15)</figcaption>
+				</figure>
+			</div>
 		</section>
-
-		<section class="section">
-			<h2>Process</h2>
-			<!-- Add project-specific process content here -->
-		</section>
-
-		<section class="section">
-			<h2>Outcome</h2>
-			<!-- Add project-specific outcome content here -->
+		<section>
+			<div class="container-element padding-default" style="background-color: #f8f8f8">
+				<p class="subtitle-1 semibold">PDF Preview</p>
+			</div>
+			<div class="book-preview">
+				<div id="flipbook"></div>
+			</div>
 		</section>
 	</main>
 </div>
@@ -43,7 +68,6 @@
 	.project-content {
 		display: flex;
 		flex-direction: column;
-		padding: 2rem 0;
 	}
 
 	.book-preview {
@@ -51,14 +75,15 @@
 		width: 100%;
 	}
 
-	.section {
-		margin-bottom: 4rem;
-		padding: 0 var(--padding-default);
-	}
-
 	h2 {
 		font-size: 2rem;
 		font-weight: 600;
 		margin-bottom: 1rem;
+	}
+
+	@media (max-width: 768px) {
+		.book-preview {
+			height: 500px;
+		}
 	}
 </style>

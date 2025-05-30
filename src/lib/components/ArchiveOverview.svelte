@@ -4,7 +4,7 @@
 	export let archive: Archive;
 </script>
 
-<div class="title-area">
+<div class="archive">
 	<div class="content-area">
 		<div class="main-image">
 			{#if archive.iframe}
@@ -15,24 +15,30 @@
 		</div>
 	</div>
 	<div class="metadata">
-		<div class="title">
-			<h1>{archive.title}</h1>
+		<div class="container-element padding-vertical">
+			<h1 class="header-4 semibold">{archive.title}</h1>
 		</div>
 		<hr />
-		<span class="item-tags">
-			<a href={`/archive?category=${archive.tags}`}>{archive.tags}</a>
-		</span>
+		<div class="container-element padding-vertical">
+			<span class="body-1"
+				>{archive.date.year}/{archive.date.month.toString().padStart(2, '0')}</span
+			>
+		</div>
 		<hr />
-		<span class="item-date"
-			>{archive.date.year}/{archive.date.month.toString().padStart(2, '0')}</span
-		>
+		<div class="container-element padding-vertical">
+			<span class="body-1 link semibold">
+				<a href={`/archive?category=${archive.tags}`}>{archive.tags}</a>
+			</span>
+		</div>
 		<hr />
-		<p class="item-intro">{archive.intro}</p>
+		<div class="container-element padding-vertical">
+			<p class="body-1">{archive.intro}</p>
+		</div>
 	</div>
 </div>
 
 <style>
-	.title-area {
+	.archive {
 		min-height: calc(100vh - var(--header-height));
 		display: flex;
 		flex-direction: row;

@@ -1,10 +1,14 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,100..700,0..1,-50..200');
 
 /* Table of contents */
 /* 0.Variables */
 /* 1.Typography */
+/* 2.Styles */
+/* 3.Layout */
+/* 4.Components */
 
 /* 0.Variables */
 
@@ -117,6 +121,11 @@ html {
 	line-height: 1.5;
 }
 
+.body-3 {
+	font-size: 0.75rem;
+	line-height: 1.5;
+}
+
 .tag-large {
 	font-size: 1rem;
 }
@@ -126,7 +135,8 @@ html {
 }
 
 @media (min-width: 1440px) {
-	.project {
+	.project,
+	.archive {
 		.header-1 {
 			font-size: calc(100vw * 80 / 1440);
 		}
@@ -167,6 +177,10 @@ html {
 			font-size: calc(100vw * 14 / 1440);
 		}
 
+		.body-3 {
+			font-size: calc(100vw * 12 / 1440);
+		}
+
 		.tag-large {
 			font-size: calc(100vw * 16 / 1440);
 		}
@@ -188,8 +202,16 @@ html {
 	background-color: var(--main-color);
 }
 
+figcaption {
+	opacity: 0.4;
+}
+
 /* 2. Styles */
-.border-bottom {
+.border-bottom-1 {
+	border-bottom: 1px solid var(--black);
+}
+
+.border-bottom-2 {
 	border-bottom: 2px solid var(--black);
 }
 
@@ -197,7 +219,43 @@ html {
 	padding: var(--padding-default);
 }
 
-/* 3.Components */
+.padding-vertical {
+	padding: var(--padding-small) var(--padding-default);
+}
+
+/* 3.Layout */
+
+.grid-col-2 {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1px;
+	background-color: var(--black);
+	height: 100%;
+}
+
+.grid-col-4 {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	gap: 1px;
+	background-color: var(--black);
+	height: 100%;
+}
+
+@media (max-width: 1024px) {
+	.grid-col-4 {
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+	}
+}
+
+@media (max-width: 768px) {
+	.grid-col-2 {
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr 1fr;
+	}
+}
+
+/* 4.Components */
 
 .tags {
 	display: flex;
@@ -205,8 +263,31 @@ html {
 	gap: 0.5rem;
 }
 
-/* Material Symbols for dflip icons */
-@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,100..700,0..1,-50..200');
+.project .container-element {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	background-color: var(--white);
+	width: 100%;
+	height: 100%;
+}
+
+.archive .container-element {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	background-color: var(--white);
+	width: 100%;
+}
+
+.container-image {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	background-color: var(--white);
+	width: 100%;
+	height: 100%;
+}
 
 /* Material Symbols base class */
 .material-symbols-outlined {
