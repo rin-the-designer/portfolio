@@ -21,14 +21,14 @@
 			<div class="grid-col-2 border-bottom-1">
 				<figure class="container-element padding-default">
 					<img
-						src="/img/projects/a-week-of-vinyl-records/awov-01.png"
+						src="/img/projects/a-week-of-vinyl-records/awov-01.jpg"
 						alt="Front and back cover of A Week of Vinyl Records"
 					/>
 					<figcaption class="body-3">Front and back cover</figcaption>
 				</figure>
 				<figure class="container-element padding-default">
 					<img
-						src="/img/projects/a-week-of-vinyl-records/awov-02.png"
+						src="/img/projects/a-week-of-vinyl-records/awov-02.jpg"
 						alt="Inner cover spread of A Week of Vinyl Records"
 					/>
 					<figcaption class="body-3">Inner cover spread</figcaption>
@@ -37,14 +37,14 @@
 			<div class="grid-col-2 border-bottom-1">
 				<figure class="container-element padding-default">
 					<img
-						src="/img/projects/a-week-of-vinyl-records/awov-03.png"
+						src="/img/projects/a-week-of-vinyl-records/awov-03.jpg"
 						alt="Inner spread, pages 12 and 13, of A Week of Vinyl Records"
 					/>
 					<figcaption class="body-3">Inner spread (p12-p13)</figcaption>
 				</figure>
 				<figure class="container-element padding-default">
 					<img
-						src="/img/projects/a-week-of-vinyl-records/awov-04.png"
+						src="/img/projects/a-week-of-vinyl-records/awov-04.jpg"
 						alt="Inner spread, pages 14 and 15, of A Week of Vinyl Records"
 					/>
 					<figcaption class="body-3">Inner spread (p14-p15)</figcaption>

@@ -21,7 +21,7 @@ function createProject(item: RawProject): Project {
 // Raw data array
 const rawProjects: RawProject[] = [
 	{
-		title: 'Loops',
+		title: 'The Loops',
 		slug: 'loops',
 		thumbnail: '/img/projects/loops/thumbnail.png',
 		coverimg: '/img/projects/loops/cover.png',
@@ -298,7 +298,7 @@ const rawProjects: RawProject[] = [
 		},
 		tools: ['InDesign'],
 		projectType: 'Individual',
-		intro: `The connection between 'THEN' and 'NOW'. THENOW is a concept lifestyle magazine that compares design from the past and design of today.`
+		intro: `The connection between 'THEN' and 'NOW'. THENOW is a conceptual lifestyle magazine that explores the relationship between past and present design. This volume delves into the history of Dieter Rams, designer of the Braun series, and Jonathan (Jony) Ive, designer of the Apple series. The magazine examines how the design language established by Dieter Rams has influenced the aesthetics and philosophy of today's products by Jony Ive.`
 	},
 	{
 		title: 'Teasign',

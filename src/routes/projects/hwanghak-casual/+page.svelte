@@ -16,7 +16,7 @@
 		</section>
 
 		<section class="section">
-			<h2>Outcome</h2>
+			<h2 class="hh-text-eng">Outcome</h2>
 			<!-- Add project-specific outcome content here -->
 		</section>
 	</main>
@@ -43,5 +43,11 @@
 		font-size: 2rem;
 		font-weight: 600;
 		margin-bottom: 1rem;
+	}
+
+	.hh-text-eng {
+		font-family: owners-wide, sans-serif;
+		font-weight: 700;
+		font-style: normal;
 	}
 </style>
